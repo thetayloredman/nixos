@@ -115,6 +115,7 @@
   };
 
   programs.powerline-go.enable = true;
+  programs.powerline-go.settings.hostname-only-if-ssh = true;
   programs.direnv.enable = true;
 
   # This value determines the Home Manager release that your
