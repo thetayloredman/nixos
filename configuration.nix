@@ -22,56 +22,34 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  environment.systemPackages = with pkgs; [
+    unzip
+    wget
+    xz
+    zlib
+    neovim
+  ];
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.networkmanager.insertNameservers = [
     "1.1.1.1"
     "1.0.0.1"
   ];
 
-  # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    libinput.enable = true;
   };
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm = {
-    enable = true;
-    wayland = false;
-  };
+  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = false;
   hardware.opengl.enable = true;
-
   programs.dconf.enable = true;
   programs.dconf.profiles.user.databases = [
     {
@@ -79,13 +57,12 @@
       settings = {
         "org/gnome/desktop/interface" = {
           clock-format = "12h";
-        };
-        "org/gnome/mutter" = {
-          unredirect-fullscreen-windows = false;
+          cursor-theme = "Adwaita";
         };
       };
     }
   ];
+
   programs.zsh.enable = true;
 
   # Configure keymap in X11
@@ -121,13 +98,6 @@
 
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    unzip
-    wget
-    xz
-    zlib
-  ];
 
   services.openssh.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
