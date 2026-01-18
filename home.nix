@@ -13,6 +13,9 @@
     zpkgs.zrc
     zpkgs.libzr
     git-absorb
+    discord
+    prismlauncher
+    firefox
   ];
 
   home.shellAliases = {

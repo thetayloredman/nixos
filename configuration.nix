@@ -55,11 +55,22 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "nvidia" ];
+    libinput.enable = true;
+  };
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm = {
+    enable = true;
+    wayland = false;
+  };
   services.desktopManager.gnome.enable = true;
+
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.open = false;
+  hardware.opengl.enable = true;
 
   programs.dconf.enable = true;
   programs.dconf.profiles.user.databases = [
@@ -68,6 +79,9 @@
       settings = {
         "org/gnome/desktop/interface" = {
           clock-format = "12h";
+        };
+        "org/gnome/mutter" = {
+          unredirect-fullscreen-windows = false;
         };
       };
     }
