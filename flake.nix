@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pipemix-tools = {
+      url = "git+https://git.char.systems/char/PipeMix-Rust-Tools";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -18,6 +22,7 @@
       zirco-pkgs,
       flake-utils,
       home-manager,
+      pipemix-tools,
     }:
 
     flake-utils.lib.eachDefaultSystem (
@@ -29,9 +34,8 @@
       {
         # devShell for developing these very configs
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [ nixfmt-tree ];
+          buildInputs = with pkgs; [ nixfmt ];
         };
-
       }
     )
     // {

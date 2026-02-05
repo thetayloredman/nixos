@@ -2,18 +2,22 @@
   config,
   pkgs,
   zpkgs,
+  pmtpkgs,
   ...
 }:
 
 {
   home.username = if pkgs.stdenv.isLinux then "logn" else "logandevine";
   home.homeDirectory = if pkgs.stdenv.isLinux then "/home/logn" else "/Users/logandevine";
-  home.packages = with pkgs; [
-    delta
-    zpkgs.zrc
-    zpkgs.libzr
-    git-absorb
-  ];
+  home.packages =
+    with pkgs;
+    [
+      delta
+      zpkgs.zrc
+      zpkgs.libzr
+      git-absorb
+    ]
+    ++ (if pkgs.stdenv.isLinux then [ pmtpkgs.pipemix_tools ] else [ ]);
 
   home.shellAliases = {
     # Git
