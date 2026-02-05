@@ -19,17 +19,14 @@
     inputs@{
       self,
       nixpkgs,
-      zirco-pkgs,
       flake-utils,
-      home-manager,
-      pipemix-tools,
+      ...
     }:
 
     flake-utils.lib.eachDefaultSystem (
       system:
       let
         pkgs = import nixpkgs { inherit system; };
-        zpkgs = zirco-pkgs.packages.${system};
       in
       {
         # devShell for developing these very configs
