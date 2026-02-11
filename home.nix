@@ -17,7 +17,17 @@
       zpkgs.libzr
       git-absorb
     ]
-    ++ (if pkgs.stdenv.isLinux then [ pmtpkgs.pipemix_tools discord prismlauncher firefox ] else [ ]);
+    ++ (
+      if pkgs.stdenv.isLinux then
+        [
+          pmtpkgs.pipemix_tools
+          discord
+          prismlauncher
+          firefox
+        ]
+      else
+        [ ]
+    );
 
   home.shellAliases = {
     # Git
