@@ -16,6 +16,7 @@
       zpkgs.zrc
       zpkgs.libzr
       git-absorb
+      mtr
     ]
     ++ (
       if pkgs.stdenv.isLinux then
@@ -49,6 +50,9 @@
 
     # Shell Utilities
     c = "clear";
+
+    # i hate macos
+    mtr = if pkgs.stdenv.isLinux then "mtr" else "sudo mtr";
   };
   programs.zsh = {
     enable = true;
