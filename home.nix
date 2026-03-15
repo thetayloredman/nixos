@@ -65,6 +65,7 @@
 
         mkdir -p "$1" && cd "$1"
       }
+      export GPG_TTY=$(tty)
     '';
   };
   # nix devshells for some reason default to bash, so also keep bash available:
@@ -90,6 +91,7 @@
       user = {
         name = "Logan Devine";
         email = "nutdriver716@gmail.com";
+        signingkey = "1CBB1085E94E159FC2D7ED6B6C154E1DBCF538F4";
       };
       core.pager = "delta";
       interactive.diffFilter = "delta --color-only";
@@ -103,6 +105,7 @@
         sw = "switch";
         tree = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %c %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       };
+      commit.gpgsign = true;
     };
   };
 
