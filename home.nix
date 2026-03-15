@@ -22,9 +22,7 @@
       if pkgs.stdenv.isLinux then
         [
           pmtpkgs.pipemix_tools
-          discord
           prismlauncher
-          firefox
         ]
       else
         [ ]
