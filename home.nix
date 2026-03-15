@@ -88,7 +88,7 @@
       credential.helper = "libsecret";
       user = {
         name = "Logan Devine";
-        email = "nutdriver716@gmail.com";
+        email = "logan@zirco.dev";
         signingkey = "1CBB1085E94E159FC2D7ED6B6C154E1DBCF538F4";
       };
       core.pager = "delta";
