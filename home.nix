@@ -126,6 +126,9 @@
       set expandtab
       set autoindent
       set copyindent
+      set textwidth=120
+      set colorcolumn=+1
+      autocmd FileType gitcommit setlocal textwidth=72
       autocmd FileType nix setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
       autocmd VimEnter * NERDTree | wincmd p
