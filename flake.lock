@@ -89,11 +89,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775598298,
-        "narHash": "sha256-FZRwskiertE+8wgFKjLoc/41UrVqzR2V3QseMBHuo/g=",
+        "lastModified": 1776904464,
+        "narHash": "sha256-sBUCj7/4d3Hoevpu3oQp8ccJNA1EDeVmFi1F8O6VJro=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "98b4d61cfaf825c8b691afae0b6e152f0cc05c86",
+        "rev": "667b3c47325441e6a444faaf405bba76ec70338a",
         "type": "github"
       },
       "original": {
@@ -142,11 +142,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1775423009,
-        "narHash": "sha256-vPKLpjhIVWdDrfiUM8atW6YkIggCEKdSAlJPzzhkQlw=",
+        "lastModified": 1776548001,
+        "narHash": "sha256-ZSK0NL4a1BwVbbTBoSnWgbJy9HeZFXLYQizjb2DPF24=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "68d8aa3d661f0e6bd5862291b5bb263b2a6595c9",
+        "rev": "b12141ef619e0a9c1c84dc8c684040326f27cdcc",
         "type": "github"
       },
       "original": {
@@ -251,11 +251,11 @@
         "rev": "201e213a85fe5b4fdba441e7d62086664a162b15",
         "revCount": 12,
         "type": "git",
-        "url": "https://git.char.systems/char/PipeMix-Rust-Tools"
+        "url": "https://git.char.systems/PipeMix/PipeMix-Rust-Tools"
       },
       "original": {
         "type": "git",
-        "url": "https://git.char.systems/char/PipeMix-Rust-Tools"
+        "url": "https://git.char.systems/PipeMix/PipeMix-Rust-Tools"
       }
     },
     "root": {
@@ -375,11 +375,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1774807970,
-        "narHash": "sha256-XPmqOdaD5ccwEOEjOZTLk6ox8T5dsu6PQPZddBzOECw=",
+        "lastModified": 1776897765,
+        "narHash": "sha256-xWBLFt3tXj04ZPwaAAoY7EF+g8c1pH4teN6Qsg/PFO4=",
         "owner": "zirco-lang",
         "repo": "zrc",
-        "rev": "aae37086976a85ca9b2d44693bc3dfd5a1ea1c08",
+        "rev": "ecb654f83288aed69d6f74ed94820cae911e0864",
         "type": "github"
       },
       "original": {

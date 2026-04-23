@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pipemix-tools = {
-      url = "git+https://git.char.systems/char/PipeMix-Rust-Tools";
+      url = "git+https://git.char.systems/PipeMix/PipeMix-Rust-Tools";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
