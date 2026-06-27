@@ -112,6 +112,8 @@
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
+    withPython3 = false;
+    withRuby = false;
     plugins = with pkgs.vimPlugins; [
       vim-fugitive
       nerdtree
