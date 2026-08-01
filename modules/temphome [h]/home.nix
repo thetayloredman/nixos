@@ -1,6 +1,7 @@
 { inputs, ... }:
 {
-  flake.modules.homeManager.temphome ={pkgs,lib,...}:
+  flake.modules.homeManager.temphome =
+    { pkgs, lib, ... }:
     let
       system = pkgs.stdenv.hostPlatform.system;
       zpkgs = inputs.zirco-pkgs.packages.${system};
