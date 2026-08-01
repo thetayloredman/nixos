@@ -4,6 +4,8 @@
     imports = with inputs.self.modules.homeManager; [
       temphome
       zirco
+      neovim
+      git
     ];
   };
 }
