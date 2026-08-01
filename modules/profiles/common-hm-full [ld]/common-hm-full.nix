@@ -5,6 +5,7 @@
       zirco
       neovim
       git
+      shell
     ];
 
     home.stateVersion = "25.05";
