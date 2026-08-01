@@ -2,12 +2,7 @@
 {
   flake.modules.homeManager.temphome =
     { pkgs, lib, ... }:
-    let
-      system = pkgs.stdenv.hostPlatform.system;
-      pmtpkgs = inputs.pipemix-tools.packages.${system};
-    in
     {
-      imports = with inputs.self.modules.homeManager; [];
       home.packages =
         with pkgs;
         [
@@ -18,7 +13,6 @@
         ++ (
           if pkgs.stdenv.isLinux then
             [
-              pmtpkgs.pipemix_tools
               prismlauncher
             ]
           else

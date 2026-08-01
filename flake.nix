@@ -20,6 +20,9 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zirco-pkgs.url = "github:zirco-lang/zrc";
+    zirco-pkgs = {
+      url = "github:zirco-lang/zrc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

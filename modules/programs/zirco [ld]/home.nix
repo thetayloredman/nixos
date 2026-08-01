@@ -6,8 +6,6 @@
       zpkgs = inputs.zirco-pkgs.packages.${system};
     in
     {
-      imports = with inputs.self.modules.homeManager; [ ];
-
       home.packages = with zpkgs; [
         zrc
         libzr
