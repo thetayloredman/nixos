@@ -4,19 +4,14 @@
     { pkgs, lib, ... }:
     let
       system = pkgs.stdenv.hostPlatform.system;
-      zpkgs = inputs.zirco-pkgs.packages.${system};
       pmtpkgs = inputs.pipemix-tools.packages.${system};
     in
     {
-      imports = with inputs.self.modules.homeManager; [ ];
-      home.username = if pkgs.stdenv.isLinux then "logn" else "logandevine";
-      home.homeDirectory = if pkgs.stdenv.isLinux then "/home/logn" else "/Users/logandevine";
+      imports = with inputs.self.modules.homeManager; [];
       home.packages =
         with pkgs;
         [
           delta
-          zpkgs.zrc
-          zpkgs.libzr
           git-absorb
           mtr
         ]

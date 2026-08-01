@@ -2,7 +2,9 @@
 {
   flake.modules.homeManager.debian = {
     imports = with inputs.self.modules.homeManager; [
-      temphome
+      profile-linux-hm-full
     ];
+    home.username = "logn";
+    home.homeDirectory = "/home/logn";
   };
 }

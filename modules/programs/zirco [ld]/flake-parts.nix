@@ -1,8 +1,7 @@
 { inputs, ... }: {
   flake-file.inputs = {
-
-    pipemix-tools = {
-      url = "git+https://git.char.systems/PipeMix/PipeMix-Rust-Tools";
+    zirco-pkgs = {
+      url = "github:zirco-lang/zrc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
