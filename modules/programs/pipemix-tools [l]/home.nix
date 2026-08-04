@@ -7,7 +7,7 @@
     in
     {
       home.packages = [
-        pmtpkgs.pipemix-tools
+        pmtpkgs.pipemix_tools
       ];
     };
 }
