@@ -136,6 +136,26 @@
         "type": "github"
       }
     },
+    "mfc-pkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785809239,
+        "narHash": "sha256-lTC5mZy3y8c9UW14fzkmozbJ4qazhv3bQJstyQr0Jf8=",
+        "owner": "thetayloredman",
+        "repo": "mfc",
+        "rev": "cb088be01cfd049b0490f2a821f157e5c7ca5521",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thetayloredman",
+        "repo": "mfc",
+        "type": "github"
+      }
+    },
     "naersk": {
       "inputs": {
         "fenix": "fenix",
@@ -268,6 +288,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "mfc-pkgs": "mfc-pkgs",
         "nixpkgs": "nixpkgs",
         "pipemix-tools": "pipemix-tools",
         "treefmt-nix": "treefmt-nix",

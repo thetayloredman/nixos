@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
+    mfc-pkgs = {
+      url = "github:thetayloredman/mfc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     pipemix-tools = {
       url = "git+https://git.char.systems/PipeMix/PipeMix-Rust-Tools";
