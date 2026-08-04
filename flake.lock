@@ -143,11 +143,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785814378,
-        "narHash": "sha256-3JDvm6llHy0X6/fO9uiYfVRS7Gylz+izZ07sBwpKj1Y=",
+        "lastModified": 1785817770,
+        "narHash": "sha256-jIyRxwWZaOmyLzvCwI7VYHPKH0b8nX2WpdbKz9UrBAc=",
         "owner": "thetayloredman",
         "repo": "mfc",
-        "rev": "db553283b8e1a086124cb411f73fd445e012b339",
+        "rev": "b7d09f0b46ef98101d6287d6763c01450f77aefa",
         "type": "github"
       },
       "original": {
