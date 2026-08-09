@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.pc = { pkgs, ... }: {
+  flake.modules.nixos.pc = { pkgs, config, ... }: {
     imports = with inputs.self.modules.nixos; [
       profile-nixos-full
     ];
@@ -33,6 +33,7 @@
     hardware.nvidia = {
       open = false;
       modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     };
 
     services.xserver.xkb = {
