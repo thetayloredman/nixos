@@ -108,11 +108,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785531816,
-        "narHash": "sha256-vkMnV0JIyw+g/NmcfoajlGaAO+9a0ezia+FZohQJrik=",
+        "lastModified": 1786031233,
+        "narHash": "sha256-TIDlLTLI1/pB7IqgjzcKQjpODQsZE2oII4XGG9B6KjI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bf9ce9fec78f95f374e8dd3b503863a3ec128ebe",
+        "rev": "7834e82588860aaf780cec1366524456a70898d7",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785817880,
-        "narHash": "sha256-96gI/qxMnbj5LPbMRKWOVCQtbic4u0E1TpPccLToMgM=",
+        "lastModified": 1785859554,
+        "narHash": "sha256-9n93+78XqRWvENEKdEZ8Gyb8MLY1PdmpM7XpzIuXkW8=",
         "owner": "thetayloredman",
         "repo": "mfc",
-        "rev": "77317853c49edebc8d5aabf7b7757e04b28b3dbe",
+        "rev": "64b3a6aab089f093adca8656bd4520795504b085",
         "type": "github"
       },
       "original": {
@@ -199,11 +199,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785692966,
-        "narHash": "sha256-vUfIeBEfpbAfZ5zjgIkYk7eHBeVfCYVjLbWnMkseYnk=",
+        "lastModified": 1786106723,
+        "narHash": "sha256-zDSUbpoeo/9ZmD2+wXnzxoo1+uhL8vxc0b8yuYMKYq0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "643809054d65fdd466a63e3155b8c498cb483c04",
+        "rev": "f13ff45afd1bb73e640eaa08a7066dbed07e3238",
         "type": "github"
       },
       "original": {
@@ -371,11 +371,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785360170,
-        "narHash": "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=",
+        "lastModified": 1785945821,
+        "narHash": "sha256-NLSyTCW4K4ofhNBllt3omPasm6QpralXH1DBZOc91Dw=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0",
+        "rev": "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0",
         "type": "github"
       },
       "original": {
@@ -393,11 +393,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785123517,
-        "narHash": "sha256-3i3IwWgAPX1jYGaSwTVnT/OZi7gvk6ixFyA0nmMUnno=",
+        "lastModified": 1786064611,
+        "narHash": "sha256-V8AR1+A2ygXKQocuErtYTB9YSi0jvfKWg5v0yEEQ+ko=",
         "owner": "zirco-lang",
         "repo": "zrc",
-        "rev": "a2abd62ab0c6d890d3a10f6fdac6ceea87730272",
+        "rev": "8df8bae777567cdd3cb73f8d4968540a5c3d1852",
         "type": "github"
       },
       "original": {
