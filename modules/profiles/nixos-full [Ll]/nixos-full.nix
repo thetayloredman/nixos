@@ -5,6 +5,7 @@
       home-manager
       nix
       zram
+      profile-gaming
     ];
   };
 
