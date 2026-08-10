@@ -22,44 +22,47 @@
             "--no-deps"
           ];
         };
-        extensions = with pkgs.vscode-extensions; [
-          eamodio.gitlens
-          ms-vsliveshare.vsliveshare
-          rust-lang.rust-analyzer
-          naumovs.color-highlight
-          mkhl.direnv
-          editorconfig.editorconfig
-          usernamehw.errorlens
-          dbaeumer.vscode-eslint
-          tamasfe.even-better-toml
-          golang.go
-          esbenp.prettier-vscode
-          ms-vscode.hexeditor
-          bbenoist.nix
-          zhuangtongfa.material-theme
+        extensions =
+          with pkgs.vscode-extensions;
+          [
+            eamodio.gitlens
+            ms-vsliveshare.vsliveshare
+            rust-lang.rust-analyzer
+            naumovs.color-highlight
+            mkhl.direnv
+            editorconfig.editorconfig
+            usernamehw.errorlens
+            dbaeumer.vscode-eslint
+            tamasfe.even-better-toml
+            golang.go
+            esbenp.prettier-vscode
+            ms-vscode.hexeditor
+            bbenoist.nix
+            zhuangtongfa.material-theme
 
-        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            # https://github.com/NixOS/nixpkgs/pull/550676
-            name = "arkdark";
-            publisher = "arktypeio";
-            version = "6.6.0";
-            sha256 = "sha256-9QsHaH8mXM7D7QE5+xTFrGyxh6MShPF9Wk0hFHpxk8A=";
-          }
-          {
-            # https://github.com/NixOS/nixpkgs/pull/550678
-            name = "comment-anchors";
-            publisher = "exodiusstudios";
-            version = "1.10.4";
-            sha256 = "sha256-FvfjPpQsgCsnY1BylhLCM/qDQChf9/iTr3cKkCGfMVI=";
-          }
-          {
-            name = "zirco-lang";
-            publisher = "zirco";
-            version = "0.1.1";
-            sha256 = "sha256-2saa8hyjDEpPeaaOgeX2yqW6FJlrHFdbY1NlFoY8DlM=";
-          }
-        ];
+          ]
+          ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+            {
+              # https://github.com/NixOS/nixpkgs/pull/550676
+              name = "arkdark";
+              publisher = "arktypeio";
+              version = "6.6.0";
+              sha256 = "sha256-9QsHaH8mXM7D7QE5+xTFrGyxh6MShPF9Wk0hFHpxk8A=";
+            }
+            {
+              # https://github.com/NixOS/nixpkgs/pull/550678
+              name = "comment-anchors";
+              publisher = "exodiusstudios";
+              version = "1.10.4";
+              sha256 = "sha256-FvfjPpQsgCsnY1BylhLCM/qDQChf9/iTr3cKkCGfMVI=";
+            }
+            {
+              name = "zirco-lang";
+              publisher = "zirco";
+              version = "0.1.1";
+              sha256 = "sha256-2saa8hyjDEpPeaaOgeX2yqW6FJlrHFdbY1NlFoY8DlM=";
+            }
+          ];
       };
     };
   };
