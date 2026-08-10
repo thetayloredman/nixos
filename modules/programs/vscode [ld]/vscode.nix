@@ -8,6 +8,7 @@
           "editor.wordWrap" = "on";
           "editor.minimap.enabled" = true;
           "editor.formatOnSave" = true;
+          "editor.inlayHints.enabled" = "off";
           "gitlens.hovers.currentLine.over" = "line";
           "files.autoSave" = "off";
           "workbench.colorTheme" = "One Dark Pro Darker";
