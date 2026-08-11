@@ -6,6 +6,7 @@
       nix
       zram
       profile-gaming
+      profile-devel
     ];
   };
 

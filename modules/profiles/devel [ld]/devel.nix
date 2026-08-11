@@ -8,4 +8,10 @@
       git
     ];
   };
+
+  flake.modules.nixos.profile-devel = {
+    imports = with inputs.self.modules.nixos; [
+      docker
+    ];
+  };
 }
