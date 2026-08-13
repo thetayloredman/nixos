@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-nh clean --ask
+nh clean all --ask
