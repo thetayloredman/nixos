@@ -7,6 +7,7 @@
       zram
       profile-gaming
       profile-devel
+      secrets
     ];
   };
 
@@ -15,6 +16,7 @@
       profile-linux-hm-full
       cider-2
       discord
+      secrets
     ];
   };
 }
