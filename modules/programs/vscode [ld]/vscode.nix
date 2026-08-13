@@ -40,16 +40,10 @@
             ms-vscode.hexeditor
             bbenoist.nix
             zhuangtongfa.material-theme
-
+            elixir-lsp.vscode-elixir-ls
+            arktypeio.arkdark
           ]
           ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-            {
-              # https://github.com/NixOS/nixpkgs/pull/550676
-              name = "arkdark";
-              publisher = "arktypeio";
-              version = "6.6.0";
-              sha256 = "sha256-9QsHaH8mXM7D7QE5+xTFrGyxh6MShPF9Wk0hFHpxk8A=";
-            }
             {
               # https://github.com/NixOS/nixpkgs/pull/550678
               name = "comment-anchors";
