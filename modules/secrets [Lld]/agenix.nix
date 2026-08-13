@@ -7,6 +7,7 @@ in
     imports = [ inputs.agenix.nixosModules.default ];
 
     age.secrets.wg-ether-privkey.file = "${secrets}/wg-ether-privkey.age";
+    age.secrets.wg-dn42-privkey.file = "${secrets}/wg-dn42-privkey.age";
   };
 
   flake.modules.homeManager.secrets =
