@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-nh home switch --ask .#macbook
+nh home switch --ask . -c macbook
