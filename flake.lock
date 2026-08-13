@@ -358,6 +358,7 @@
         "mfc-pkgs": "mfc-pkgs",
         "nixpkgs": "nixpkgs",
         "pipemix-tools": "pipemix-tools",
+        "secrets": "secrets",
         "treefmt-nix": "treefmt-nix",
         "zirco-pkgs": "zirco-pkgs"
       }
@@ -429,6 +430,22 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786579949,
+        "narHash": "sha256-mPA5wq1IutgVSfHS44eGo3lVXEuIwP+BbSCtJX8jQNc=",
+        "ref": "refs/heads/main",
+        "rev": "00fdf637e05536a1451c639a917b580b66f059c4",
+        "revCount": 2,
+        "type": "git",
+        "url": "file:./secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:./secrets"
       }
     },
     "systems": {

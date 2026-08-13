@@ -1,9 +1,12 @@
 { inputs, ... }:
+let
+  inherit (inputs) secrets;
+in
 {
   flake.modules.nixos.secrets = {
     imports = [ inputs.agenix.nixosModules.default ];
 
-    age.secrets.wg-ether-privkey = ../../secrets/wg-ether-privkey.age;
+    age.secrets.wg-ether-privkey.file = "${secrets}/wg-ether-privkey.age";
   };
 
   flake.modules.homeManager.secrets =

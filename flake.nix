@@ -24,6 +24,10 @@
       url = "git+https://git.char.systems/PipeMix/PipeMix-Rust-Tools";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    secrets = {
+      url = "git+file:./secrets";
+      flake = false;
+    };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
