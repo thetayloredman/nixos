@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.homeManager.profile-common-hm-full = { pkgs, ...}: {
+  flake.modules.homeManager.profile-common-hm-full = { pkgs, ... }: {
     imports = with inputs.self.modules.homeManager; [
       profile-devel
       mfc

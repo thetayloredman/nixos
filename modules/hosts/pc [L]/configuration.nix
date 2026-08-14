@@ -3,6 +3,7 @@
   flake.modules.nixos.pc = { pkgs, config, ... }: {
     imports = with inputs.self.modules.nixos; [
       profile-nixos-full
+      inputs.nixos-hardware.nixosModules.msi-b550-a-pro
     ];
 
     boot.loader.systemd-boot.enable = true;
