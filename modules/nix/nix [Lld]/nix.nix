@@ -7,6 +7,7 @@
         "flakes"
       ];
     };
+    nixpkgs.config.allowUnfree = true;
   };
 
   flake.modules.homeManager.nix = { pkgs, ... }: {
@@ -16,5 +17,6 @@
         experimental-features = nix-command flakes
       '';
     };
+    nixpkgs.config.allowUnfree = true;
   };
 }

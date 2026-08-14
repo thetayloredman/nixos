@@ -37,6 +37,7 @@
       powerManagement.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     };
+    hardware.enableAllFirmware = true;
 
     services.xserver.xkb = {
       layout = "us";
@@ -73,8 +74,6 @@
     };
 
     programs.firefox.enable = true;
-
-    nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
     ];
