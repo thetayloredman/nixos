@@ -5,6 +5,7 @@
       profile-devel
       mfc
       shell
+      comma
     ];
 
     home.packages = with pkgs; [
