@@ -492,11 +492,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786409851,
-        "narHash": "sha256-jMyP03Jun/o2maU6sF8fRSZ1kgtkdLwU6W6XEhkubZ4=",
+        "lastModified": 1786666243,
+        "narHash": "sha256-OBRzGGK1MwSaIWKoWviEnKjKaBHaWudQUD05UjtinwQ=",
         "owner": "zirco-lang",
         "repo": "zrc",
-        "rev": "c52f45f23c5815eb5f102dc5696572b261820b57",
+        "rev": "5d3fdb4c47de931b4232826f3df9f14887fbaf34",
         "type": "github"
       },
       "original": {
