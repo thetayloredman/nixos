@@ -28,8 +28,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    pipemix-pipeette = {
+      url = "git+https://git.char.systems/ln/pipeMix-rust-pipeette?ref=ln/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     pipemix-tools = {
-      url = "git+https://git.char.systems/PipeMix/PipeMix-Rust-Tools";
+      url = "git+https://git.char.systems/ln/PipeMix-Rust-Tools?ref=ln/nix-v2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
