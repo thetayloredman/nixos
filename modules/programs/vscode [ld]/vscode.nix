@@ -58,8 +58,8 @@
             {
               name = "zirco-lang";
               publisher = "zirco";
-              version = "0.1.1";
-              sha256 = "sha256-2saa8hyjDEpPeaaOgeX2yqW6FJlrHFdbY1NlFoY8DlM=";
+              version = "0.1.2";
+              sha256 = "sha256-IigPzn+0JApWbBb8Zv7Zg3AXtVnJDfa0Mf4XbXjeivc=";
             }
           ];
       };
