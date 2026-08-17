@@ -1,6 +1,8 @@
 { inputs, lib, ... }:
 {
   flake.modules.homeManager.vscode = { pkgs, ... }: {
+    home.packages = with pkgs; [ nixd ];
+
     programs.vscode = {
       enable = true;
       profiles.default = {
@@ -22,6 +24,9 @@
             "--"
             "--no-deps"
           ];
+          "nix.enableLanguageServer" = true;
+          "nix.serverPath" = "nixd";
+          "nix.serverSettings"."nixd"."formatting"."command" = "nixfmt";
 
           "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
           "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -46,6 +51,7 @@
             zhuangtongfa.material-theme
             elixir-lsp.vscode-elixir-ls
             arktypeio.arkdark
+            jnoortheen.nix-ide
           ]
           ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
