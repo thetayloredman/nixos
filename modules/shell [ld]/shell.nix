@@ -1,6 +1,5 @@
 { inputs, ... }: {
   flake.modules.homeManager.shell = { pkgs, lib, ... }: {
-
     home.shellAliases = {
       # Directory Nav
       ll = "ls -lh";
@@ -14,6 +13,9 @@
     };
     programs.zsh = {
       enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
       initContent = ''
         mk() {
             if [ -z "$1" ]; then
@@ -29,6 +31,7 @@
     # nix devshells for some reason default to bash, so also keep bash available:
     programs.bash = {
       enable = true;
+      enableCompletion = true;
       initExtra = ''
         mk() {
             if [ -z "$1" ]; then

@@ -66,6 +66,7 @@
       packages = with pkgs; [
         kdePackages.kate
       ];
+      shell = pkgs.zsh;
     };
     home-manager.users.logn = {
       imports = [
@@ -74,6 +75,7 @@
     };
 
     programs.firefox.enable = true;
+    programs.zsh.enable = true;
 
     environment.systemPackages = with pkgs; [
     ];
