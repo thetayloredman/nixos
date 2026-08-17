@@ -17,6 +17,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       initContent = ''
+        bindkey -e
         mk() {
             if [ -z "$1" ]; then
             echo "Usage: mk <dirname>"
