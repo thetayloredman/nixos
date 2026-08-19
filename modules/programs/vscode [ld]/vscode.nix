@@ -52,15 +52,9 @@
             elixir-lsp.vscode-elixir-ls
             arktypeio.arkdark
             jnoortheen.nix-ide
+            ExodiusStudios.comment-anchors
           ]
           ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-            {
-              # https://github.com/NixOS/nixpkgs/pull/550678
-              name = "comment-anchors";
-              publisher = "exodiusstudios";
-              version = "1.10.4";
-              sha256 = "sha256-FvfjPpQsgCsnY1BylhLCM/qDQChf9/iTr3cKkCGfMVI=";
-            }
             {
               name = "zirco-lang";
               publisher = "zirco";
