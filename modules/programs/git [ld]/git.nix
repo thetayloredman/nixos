@@ -33,6 +33,7 @@
 
     home.shellAliases = {
       gip = "git push";
+      gipf = "git push --force";
       gipl = "git pull";
       gia = "git add";
       gcm = "git commit";
@@ -41,6 +42,9 @@
       gco = "git checkout";
       gid = "git diff";
       grb = "git rebase";
+      gs = "git stash";
+      grs = "git restore";
+      grss = "git restore --staged";
     };
   };
 }

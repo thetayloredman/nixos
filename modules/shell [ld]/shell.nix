@@ -18,6 +18,8 @@
       syntaxHighlighting.enable = true;
       initContent = ''
         bindkey -e
+        bindkey "^[[1;5C" forward-word
+        bindkey "^[[1;5D" backward-word
         mk() {
             if [ -z "$1" ]; then
             echo "Usage: mk <dirname>"
