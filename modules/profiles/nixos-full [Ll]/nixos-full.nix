@@ -15,7 +15,6 @@
     imports = with inputs.self.modules.homeManager; [
       profile-linux-hm-full
       profile-gaming
-      discord
       secrets
     ];
   };

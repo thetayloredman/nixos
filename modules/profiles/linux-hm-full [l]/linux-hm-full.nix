@@ -8,6 +8,7 @@
 
     home.packages = with pkgs; [
       cider-2
+      discord
     ];
   };
 }
