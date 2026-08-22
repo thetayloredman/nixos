@@ -15,6 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
+    logn-nixpkgs-dcpomatic-init.url = "github:thetayloredman/nixpkgs/dcpomatic/init";
     mfc-pkgs = {
       url = "github:thetayloredman/mfc";
       inputs.nixpkgs.follows = "nixpkgs";

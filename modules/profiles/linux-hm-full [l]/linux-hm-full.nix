@@ -4,6 +4,7 @@
     imports = with inputs.self.modules.homeManager; [
       profile-common-hm-full
       pipemix
+      dcpomatic
     ];
 
     home.packages = with pkgs; [

@@ -238,6 +238,22 @@
         "type": "github"
       }
     },
+    "logn-nixpkgs-dcpomatic-init": {
+      "locked": {
+        "lastModified": 1787267531,
+        "narHash": "sha256-9lurUCOH3Zk0NhgzWVLv0xeFtuJsy7U9bmBtLOzzcC0=",
+        "owner": "thetayloredman",
+        "repo": "nixpkgs",
+        "rev": "e51b4a6b8d686cfd56723b7ba43ace703e6510f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thetayloredman",
+        "ref": "dcpomatic/init",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "mfc-pkgs": {
       "inputs": {
         "nixpkgs": [
@@ -428,6 +444,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager_2",
         "import-tree": "import-tree",
+        "logn-nixpkgs-dcpomatic-init": "logn-nixpkgs-dcpomatic-init",
         "mfc-pkgs": "mfc-pkgs",
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
