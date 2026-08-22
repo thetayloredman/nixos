@@ -385,11 +385,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787159520,
-        "narHash": "sha256-zSnQq8PpXZclPrJr1P/ThZwA0n3c8f9MOohB1mHtnvk=",
+        "lastModified": 1787287955,
+        "narHash": "sha256-VuOpEE8a1fS4AvtWjanjKZbKJTSUZLcj76CEkoqfNt0=",
         "ref": "filter-wip",
-        "rev": "51b20529015d877f493e0f9e4fcbe7c13fdaa425",
-        "revCount": 9,
+        "rev": "8291be6b126c68a476a34b59fe0eeaf3b6ac0e8f",
+        "revCount": 14,
         "type": "git",
         "url": "https://git.char.systems/PipeMix/pipemix-rust-pipeette"
       },
