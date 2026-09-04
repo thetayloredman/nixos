@@ -11,6 +11,7 @@
           "editor.minimap.enabled" = true;
           "editor.formatOnSave" = true;
           "editor.inlayHints.enabled" = "off";
+          "editor.rulers" = [ 100 ];
           "gitlens.hovers.currentLine.over" = "line";
           "files.autoSave" = "off";
           "workbench.colorTheme" = "One Dark Pro Darker";
