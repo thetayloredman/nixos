@@ -1,6 +1,9 @@
 { inputs, ... }: {
   flake.modules.homeManager.profile-multimedia = { pkgs, ... }: {
-    home.packages = with pkgs; [ vlc ];
+    home.packages = with pkgs; [
+      vlc
+      dcpomatic
+    ];
   };
 
   flake.modules.nixos.profile-multimedia = {
