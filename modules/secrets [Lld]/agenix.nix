@@ -13,6 +13,7 @@ in
       })
       (lib.mkIf (config.networking.hostName == "borealis") {
         ops-passwd.file = "${secrets}/ops-passwd.age";
+        borealis-wg-dc-privkey.file = "${secrets}/borealis-wg-dc-privkey.age";
       })
     ];
 
