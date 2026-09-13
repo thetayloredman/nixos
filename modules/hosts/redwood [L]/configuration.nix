@@ -9,7 +9,7 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    networking.hostName = "nixos";
+    networking.hostName = "redwood";
     time.timeZone = "America/Los_Angeles";
 
     hardware.enableAllFirmware = true;
