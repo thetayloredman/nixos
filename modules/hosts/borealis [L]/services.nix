@@ -3,6 +3,7 @@
     imports = with inputs.self.modules.nixos; [
       proxmox-backup-server-oci
       logmuks
+      gatus-borealis
     ];
   };
 }

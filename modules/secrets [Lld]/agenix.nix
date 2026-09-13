@@ -15,6 +15,7 @@ in
         ops-passwd.file = "${secrets}/ops-passwd.age";
         borealis-wg-dc-privkey.file = "${secrets}/borealis-wg-dc-privkey.age";
         borealis-cloudflare-acme.file = "${secrets}/borealis-cloudflare-acme.age";
+        borealis-gatus-env.file = "${secrets}/borealis-gatus-env.age";
       })
     ];
 

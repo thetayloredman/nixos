@@ -53,6 +53,10 @@
       url = "git+file:./secrets";
       flake = false;
     };
+    statcon-config-src = {
+      url = "git+file:./statcon-config";
+      flake = false;
+    };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";

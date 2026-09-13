@@ -283,11 +283,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789320570,
-        "narHash": "sha256-1Js4AJiWLV7U1SF3ok0J2tKbBEJYE5YpElGU+7fMbfo=",
+        "lastModified": 1789339793,
+        "narHash": "sha256-1TGxgma8jQGhw0yfjyndwPhgcoXAYtlSm4ezENVzrPA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "87b3c74df02a2b2e691a24f3c82774f48a70c1bd",
+        "rev": "dd0b74e2b53eb6aa03fe120fcc00a4d37cc288f8",
         "type": "github"
       },
       "original": {
@@ -591,6 +591,7 @@
         "pipemix-pipeette": "pipemix-pipeette",
         "pipemix-tools": "pipemix-tools",
         "secrets": "secrets",
+        "statcon-config-src": "statcon-config-src",
         "treefmt-nix": "treefmt-nix",
         "zirco-pkgs": "zirco-pkgs"
       }
@@ -666,11 +667,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1789336997,
-        "narHash": "sha256-YhuI0gWcjkXhsZJxERXTUevPOijo9oyDt/rf9szNYr4=",
+        "lastModified": 1789344187,
+        "narHash": "sha256-84whTrg0ovQ7LfKAlNgUWwfkyy1dxoiFnTa/sNnswU8=",
         "ref": "refs/heads/main",
-        "rev": "be5390f8a15469989e5f7e16ad296deb6677714b",
-        "revCount": 11,
+        "rev": "428bfb80c32293a9e15843a87e09a6b5d2d97bc9",
+        "revCount": 12,
         "type": "git",
         "url": "file:./secrets"
       },
@@ -693,6 +694,22 @@
         "ref": "release-26.05",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "statcon-config-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789344247,
+        "narHash": "sha256-zMaWExuL+MKr9OQ1A7yDL+BScWlyKsZVa2/tP92GG/U=",
+        "ref": "refs/heads/main",
+        "rev": "bfd2fecbeb487966e421b142e56205663e3c9897",
+        "revCount": 29,
+        "type": "git",
+        "url": "file:./statcon-config"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:./statcon-config"
       }
     },
     "systems": {
