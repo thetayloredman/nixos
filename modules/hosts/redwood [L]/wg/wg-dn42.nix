@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.host-redwood = { config, ... }: {
+  flake.modules.nixos.redwood = { config, ... }: {
     networking.wg-quick.interfaces.wg-dn42 = {
       autostart = false;
 

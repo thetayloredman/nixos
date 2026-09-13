@@ -3,11 +3,19 @@ let
   inherit (inputs) secrets;
 in
 {
-  flake.modules.nixos.secrets = {
+  flake.modules.nixos.secrets = { lib, config, ... }: {
     imports = [ inputs.agenix.nixosModules.default ];
 
-    age.secrets.wg-ether-privkey.file = "${secrets}/wg-ether-privkey.age";
-    age.secrets.wg-dn42-privkey.file = "${secrets}/wg-dn42-privkey.age";
+    age.secrets = lib.mkMerge [
+      (lib.mkIf (config.networking.hostName == "redwood") {
+        wg-ether-privkey.file = "${secrets}/wg-ether-privkey.age";
+        wg-dn42-privkey.file = "${secrets}/wg-dn42-privkey.age";
+      })
+      (lib.mkIf (config.networking.hostName == "borealis") {
+        ops-passwd.file = "${secrets}/ops-passwd.age";
+      })
+    ];
+
   };
 
   flake.modules.homeManager.secrets =

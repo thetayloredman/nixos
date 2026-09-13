@@ -1,6 +1,11 @@
 { inputs, ... }: {
   flake.modules.homeManager.profile-multimedia = { pkgs, ... }: {
+    imports = with inputs.self.modules.homeManager; [
+      pipemix
+    ];
+
     home.packages = with pkgs; [
+      cider-2
       vlc
       dcpomatic
     ];

@@ -2,8 +2,6 @@
 {
   flake.modules.homeManager.profile-home-base = { pkgs, ... }: {
     imports = with inputs.self.modules.homeManager; [
-      profile-devel
-      mfc
       shell
       comma
     ];

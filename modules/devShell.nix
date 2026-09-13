@@ -11,6 +11,7 @@
         packages = with pkgs; [
           nixfmt
           agenix
+          colmena
         ];
       };
     };

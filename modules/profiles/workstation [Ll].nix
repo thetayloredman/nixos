@@ -56,12 +56,18 @@
     networking.networkmanager.enable = true;
   };
 
-  flake.modules.homeManager.profile-workstation = {
+  flake.modules.homeManager.profile-workstation = { pkgs, ... }: {
     imports = with inputs.self.modules.homeManager; [
       home-linux
       profile-gaming
       profile-multimedia
-      secrets
+      profile-devel
+      mfc
+    ];
+
+    home.packages = with pkgs; [
+      discord
+      kdePackages.kate
     ];
   };
 }

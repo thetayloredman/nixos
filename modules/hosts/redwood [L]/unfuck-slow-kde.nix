@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.modules.nixos.host-redwood =
+  flake.modules.nixos.redwood =
     {
       config,
       pkgs,
