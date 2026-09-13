@@ -1,4 +1,8 @@
 { inputs, ... }: {
+  flake.modules.nixos.shell = { ... }: {
+    programs.zsh.enable = true;
+  };
+
   flake.modules.homeManager.shell = { pkgs, lib, ... }: {
     home.shellAliases = {
       # Directory Nav

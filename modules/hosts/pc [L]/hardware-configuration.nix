@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ lib, ... }:
 {
   flake.modules.nixos.pc = { config, ... }: {
     boot.initrd.availableKernelModules = [
