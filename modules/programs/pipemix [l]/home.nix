@@ -1,6 +1,6 @@
 { inputs, ... }: {
   flake.modules.homeManager.pipemix =
-    { pkgs, lib, ... }:
+    { pkgs, ... }:
     let
       system = pkgs.stdenv.hostPlatform.system;
       pmtpkgs = inputs.pipemix-tools.packages.${system};

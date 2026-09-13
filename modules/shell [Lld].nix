@@ -1,9 +1,9 @@
-{ inputs, ... }: {
+{ ... }: {
   flake.modules.nixos.shell = { ... }: {
     programs.zsh.enable = true;
   };
 
-  flake.modules.homeManager.shell = { pkgs, lib, ... }: {
+  flake.modules.homeManager.shell = {
     home.shellAliases = {
       # Directory Nav
       ll = "ls -lh";

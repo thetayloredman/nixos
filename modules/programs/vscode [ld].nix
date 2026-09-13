@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ ... }:
 {
   flake.modules.homeManager.vscode = { pkgs, ... }: {
     home.packages = with pkgs; [ nixd ];

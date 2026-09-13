@@ -1,7 +1,6 @@
-{ inputs, ... }: {
+{ ... }: {
   flake.modules.nixos.redwood =
     {
-      config,
       pkgs,
       lib,
       ...

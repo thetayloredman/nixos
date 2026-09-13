@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  flake.modules.homeManager.git = { pkgs, lib, ... }: {
+{ ... }: {
+  flake.modules.homeManager.git = { pkgs, ... }: {
     home.packages = with pkgs; [
       delta
       git-absorb

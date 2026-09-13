@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  flake.modules.homeManager.neovim = { pkgs, lib, ... }: {
+{ ... }: {
+  flake.modules.homeManager.neovim = { pkgs, ... }: {
     programs.neovim = {
       enable = true;
       viAlias = true;

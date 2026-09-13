@@ -1,6 +1,6 @@
 { inputs, ... }: {
   flake.modules.homeManager.comma = {
-    imports = with inputs.self.modules.homeManager; [
+    imports = [
       inputs.nix-index-database.homeModules.default
     ];
 

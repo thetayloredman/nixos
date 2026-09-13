@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ ... }: {
   flake-file.inputs = {
     agenix = {
       url = "github:ryantm/agenix";

@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.modules.nixos.borealis = { pkgs, ... }: {
+  flake.modules.nixos.borealis = {
     imports = with inputs.self.modules.nixos; [
       profile-server
       inputs.nixos-hardware.nixosModules.common-cpu-intel

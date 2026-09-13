@@ -1,6 +1,6 @@
 { inputs, ... }: {
   flake.modules.homeManager.zirco =
-    { pkgs, lib, ... }:
+    { pkgs, ... }:
     let
       system = pkgs.stdenv.hostPlatform.system;
       zpkgs = inputs.zirco-pkgs.packages.${system};
