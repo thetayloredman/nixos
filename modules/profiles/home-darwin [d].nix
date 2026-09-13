@@ -1,8 +1,8 @@
 { inputs, ... }:
 {
-  flake.modules.homeManager.profile-darwin-hm-full = {
+  flake.modules.homeManager.home-darwin = {
     imports = with inputs.self.modules.homeManager; [
-      profile-common-hm-full
+      profile-home-base
       nix
     ];
   };

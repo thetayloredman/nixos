@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.profile-nixos-full = {
+  flake.modules.nixos.profile-workstation = {
     imports = with inputs.self.modules.nixos; [
       profile-gaming
       profile-devel
@@ -12,9 +12,9 @@
     ];
   };
 
-  flake.modules.homeManager.profile-nixos-full = {
+  flake.modules.homeManager.profile-workstation = {
     imports = with inputs.self.modules.homeManager; [
-      profile-linux-hm-full
+      home-linux
       profile-gaming
       profile-multimedia
       secrets

@@ -2,7 +2,7 @@
 {
   flake.modules.nixos.pc = { pkgs, config, ... }: {
     imports = with inputs.self.modules.nixos; [
-      profile-nixos-full
+      profile-workstation
       inputs.nixos-hardware.nixosModules.msi-b550-a-pro
     ];
 
@@ -70,7 +70,7 @@
     };
     home-manager.users.logn = {
       imports = [
-        inputs.self.modules.homeManager.profile-nixos-full
+        inputs.self.modules.homeManager.profile-workstation
       ];
     };
 
