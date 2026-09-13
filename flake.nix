@@ -24,6 +24,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:denful/import-tree";
+    logmuks-src = {
+      url = "github:thetayloredman/logmuks";
+      flake = false;
+    };
     mfc-pkgs = {
       url = "github:thetayloredman/mfc";
       inputs.nixpkgs.follows = "nixpkgs";

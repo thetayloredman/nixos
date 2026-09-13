@@ -353,6 +353,22 @@
         "type": "github"
       }
     },
+    "logmuks-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788629464,
+        "narHash": "sha256-Yc2qWRhYK64gm5dT4lsEKhx7I29JZGUxCDJOftmyVis=",
+        "owner": "thetayloredman",
+        "repo": "logmuks",
+        "rev": "6d375ac30c6795de7ab7dd3498862e28d892b830",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thetayloredman",
+        "repo": "logmuks",
+        "type": "github"
+      }
+    },
     "mfc-pkgs": {
       "inputs": {
         "nixpkgs": [
@@ -567,6 +583,7 @@
         "home-manager": "home-manager_2",
         "impermanence": "impermanence",
         "import-tree": "import-tree",
+        "logmuks-src": "logmuks-src",
         "mfc-pkgs": "mfc-pkgs",
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
@@ -649,11 +666,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1789332320,
-        "narHash": "sha256-LgKAMbLoZoOtenV6rrLmK6a7D+akJRH6kTwaOTCclfw=",
+        "lastModified": 1789336997,
+        "narHash": "sha256-YhuI0gWcjkXhsZJxERXTUevPOijo9oyDt/rf9szNYr4=",
         "ref": "refs/heads/main",
-        "rev": "55751d2fa1824e5b8ccb9d623a8257e87955b7c1",
-        "revCount": 9,
+        "rev": "be5390f8a15469989e5f7e16ad296deb6677714b",
+        "revCount": 11,
         "type": "git",
         "url": "file:./secrets"
       },
