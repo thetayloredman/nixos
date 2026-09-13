@@ -12,7 +12,7 @@
         "172.22.154.98"
         "ln.dn42"
       ];
-      privateKeyFile = config.age.secrets.wg-dn42-privkey.path;
+      privateKeyFile = config.age.secrets.redwood-wg-dn42-privkey.path;
 
       peers = [
         {

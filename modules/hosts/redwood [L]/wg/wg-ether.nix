@@ -9,7 +9,7 @@
         "10.65.0.2"
         "dc.zirco.dev"
       ];
-      privateKeyFile = config.age.secrets.wg-ether-privkey.path;
+      privateKeyFile = config.age.secrets.redwood-wg-ether-privkey.path;
 
       peers = [
         {

@@ -8,8 +8,8 @@ in
 
     age.secrets = lib.mkMerge [
       (lib.mkIf (config.networking.hostName == "redwood") {
-        wg-ether-privkey.file = "${secrets}/wg-ether-privkey.age";
-        wg-dn42-privkey.file = "${secrets}/wg-dn42-privkey.age";
+        redwood-wg-ether-privkey.file = "${secrets}/redwood-wg-ether-privkey.age";
+        redwood-wg-dn42-privkey.file = "${secrets}/redwood-wg-dn42-privkey.age";
       })
       (lib.mkIf (config.networking.hostName == "borealis") {
         ops-passwd.file = "${secrets}/ops-passwd.age";
