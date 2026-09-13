@@ -1,5 +1,5 @@
 { ... }: {
-  flake.modules.nixos.pc = { config, ... }: {
+  flake.modules.nixos.host-redwood = { config, ... }: {
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.graphics.enable = true;
     hardware.nvidia = {

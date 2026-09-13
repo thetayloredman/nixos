@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.pc = { pkgs, ... }: {
+  flake.modules.nixos.host-redwood = { pkgs, ... }: {
     imports = with inputs.self.modules.nixos; [
       profile-workstation
       inputs.nixos-hardware.nixosModules.msi-b550-a-pro

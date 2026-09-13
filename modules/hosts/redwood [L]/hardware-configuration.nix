@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.nixos.pc = { config, ... }: {
+  flake.modules.nixos.host-redwood = { config, ... }: {
     boot.initrd.availableKernelModules = [
       "nvme"
       "xhci_pci"

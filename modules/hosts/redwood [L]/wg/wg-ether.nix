@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.pc = { config, ... }: {
+  flake.modules.nixos.host-redwood = { config, ... }: {
     networking.wg-quick.interfaces.wg-ether = {
       autostart = false;
 
