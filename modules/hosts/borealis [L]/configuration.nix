@@ -4,6 +4,8 @@
       profile-server
       inputs.nixos-hardware.nixosModules.common-cpu-intel
       inputs.nixos-hardware.nixosModules.common-pc-ssd
+
+      proxmox-backup-server-oci
     ];
 
     networking.hostId = "8425e349";

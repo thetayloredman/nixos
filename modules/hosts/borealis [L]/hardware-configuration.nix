@@ -33,7 +33,16 @@
     fileSystems."/home" = {
       device = "ssd/safe/home";
       fsType = "zfs";
-      neededForBoot = true;
+    };
+
+    fileSystems."/hdd" = {
+      device = "hdd";
+      fsType = "zfs";
+    };
+
+    fileSystems."/backup/pbs" = {
+      device = "backup/pbs";
+      fsType = "zfs";
     };
 
     fileSystems."/boot" = {
