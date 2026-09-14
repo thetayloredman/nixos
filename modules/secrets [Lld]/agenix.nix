@@ -16,6 +16,7 @@ in
         borealis-wg-dc-privkey.file = "${secrets}/borealis-wg-dc-privkey.age";
         borealis-cloudflare-acme.file = "${secrets}/borealis-cloudflare-acme.age";
         borealis-gatus-env.file = "${secrets}/borealis-gatus-env.age";
+        pbs-password-hash.file = "${secrets}/pbs-password-hash.age";
         synapse-db-wal-archiver-pgpass = {
           file = "${secrets}/synapse-db-wal-archiver-pgpass.age";
           owner = "postgres";
