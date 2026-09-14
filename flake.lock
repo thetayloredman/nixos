@@ -699,11 +699,11 @@
     "statcon-config-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1789344247,
-        "narHash": "sha256-zMaWExuL+MKr9OQ1A7yDL+BScWlyKsZVa2/tP92GG/U=",
+        "lastModified": 1789347503,
+        "narHash": "sha256-jrRZQ48UbdtTK3YgMSP2m6T8TECcvsVOSRUt0T4AJf4=",
         "ref": "refs/heads/main",
-        "rev": "bfd2fecbeb487966e421b142e56205663e3c9897",
-        "revCount": 29,
+        "rev": "093b2d42b473b157992d1cec33370ab86bfc7be2",
+        "revCount": 30,
         "type": "git",
         "url": "file:./statcon-config"
       },
