@@ -16,6 +16,12 @@ in
         borealis-wg-dc-privkey.file = "${secrets}/borealis-wg-dc-privkey.age";
         borealis-cloudflare-acme.file = "${secrets}/borealis-cloudflare-acme.age";
         borealis-gatus-env.file = "${secrets}/borealis-gatus-env.age";
+        synapse-db-wal-archiver-pgpass = {
+          file = "${secrets}/synapse-db-wal-archiver-pgpass.age";
+          owner = "postgres";
+          group = "postgres";
+          mode = "0400";
+        };
       })
     ];
 

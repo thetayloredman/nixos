@@ -4,6 +4,7 @@
       proxmox-backup-server-oci
       logmuks
       gatus-borealis
+      synapse-db-wal-archiver
     ];
   };
 }
