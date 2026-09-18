@@ -41,6 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixvim.url = "github:nix-community/nixvim";
     pipemix-pipeette = {
       url = "git+https://git.char.systems/PipeMix/pipemix-rust-pipeette?ref=filter-wip";
       inputs.nixpkgs.follows = "nixpkgs";
