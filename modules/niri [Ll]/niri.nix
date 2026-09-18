@@ -25,18 +25,22 @@
 
       services.greetd = {
         enable = true;
+        vt = 1;
         settings.default_session = {
           command = "${lib.getExe pkgs.tuigreet} --time --asterisks --user-menu --cmd ${config.programs.niri.package}/bin/niri-session";
           user = "greeter";
         };
       };
       security.pam.services.greetd.enableGnomeKeyring = true;
-      # prevent greetd from conflicting with logs at boot time
-      systemd.services.greetd = {
-        serviceConfig = {
-          Type = "idle";
-          After = [ "graphical.target" ];
-        };
+      systemd.services.greetd.serviceConfig = {
+        Type = "idle";
+        StandardInput = "tty";
+        StandardOutput = "tty";
+        StandardError = "journal"; # Without this errors will spam on screen
+        # Without these bootlogs will spam on screen
+        TTYReset = true;
+        TTYVHangup = true;
+        TTYVTDisallocate = true;
       };
     };
 
