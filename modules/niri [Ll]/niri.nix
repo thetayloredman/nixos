@@ -7,7 +7,7 @@
       ...
     }:
     {
-      imports = with inputs.self.nixos.modules; [ fonts ];
+      imports = with inputs.self.modules.nixos; [ fonts ];
 
       programs.niri.enable = true;
       security.polkit.enable = true;
@@ -25,7 +25,6 @@
 
       services.greetd = {
         enable = true;
-        vt = 1;
         settings.default_session = {
           command = "${lib.getExe pkgs.tuigreet} --time --asterisks --user-menu --cmd ${config.programs.niri.package}/bin/niri-session";
           user = "greeter";
