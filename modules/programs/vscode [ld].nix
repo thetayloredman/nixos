@@ -62,6 +62,12 @@
               version = "0.1.2";
               sha256 = "sha256-IigPzn+0JApWbBb8Zv7Zg3AXtVnJDfa0Mf4XbXjeivc=";
             }
+            {
+              name = "kdl";
+              publisher = "kdl-org";
+              version = "2.1.3";
+              sha256 = "sha256-Jssmb5owrgNWlmLFSKCgqMJKp3sPpOrlEUBwzZSSpbM=";
+            }
           ];
       };
     };

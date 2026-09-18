@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.profile-workstation = {
+  flake.modules.nixos.profile-workstation = { config, ... }: {
     imports = with inputs.self.modules.nixos; [
       profile-gaming
       profile-devel
@@ -10,6 +10,7 @@
       zram
       secrets
       shell
+      niri
     ];
 
     security.rtkit.enable = true;
@@ -33,8 +34,6 @@
     };
 
     services.xserver.enable = true;
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
     services.xserver.xkb = {
       layout = "us";
       variant = "";
@@ -63,6 +62,7 @@
       profile-multimedia
       profile-devel
       mfc
+      niri
     ];
 
     home.packages = with pkgs; [
