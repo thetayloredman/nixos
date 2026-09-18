@@ -6,6 +6,7 @@
       zram
       secrets
       shell
+      theming
     ];
 
     services.openssh.enable = true;

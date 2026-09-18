@@ -14,7 +14,6 @@
           "editor.rulers" = [ 100 ];
           "gitlens.hovers.currentLine.over" = "line";
           "files.autoSave" = "off";
-          "workbench.colorTheme" = "One Dark Pro Darker";
           "github.copilot.enable"."*" = true;
           "rust-analyzer.check.overrideCommand" = [
             "cargo"

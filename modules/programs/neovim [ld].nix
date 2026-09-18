@@ -11,7 +11,6 @@
         vim-fugitive
         nerdtree
         lightline-vim
-        gruvbox
         undotree
       ];
       extraConfig = ''
@@ -27,7 +26,6 @@
         autocmd FileType nix setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
         autocmd VimEnter * NERDTree | wincmd p
-        autocmd VimEnter * ++nested colorscheme gruvbox
       '';
     };
   };

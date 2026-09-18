@@ -11,6 +11,7 @@
       secrets
       shell
       niri
+      theming
     ];
 
     security.rtkit.enable = true;
