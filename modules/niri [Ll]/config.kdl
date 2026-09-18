@@ -38,7 +38,7 @@ layout {
     }
 }
 
-spawn-at-startup "waybar"
+spawn-at-startup "noctalia"
 
 hotkey-overlay {
     skip-at-startup

@@ -23,28 +23,22 @@
         pavucontrol
       ];
 
-      services.greetd = {
+      services.displayManager.noctalia-greeter = {
         enable = true;
-        settings.default_session = {
-          command = "${lib.getExe pkgs.tuigreet} --time --asterisks --user-menu --cmd ${config.programs.niri.package}/bin/niri-session";
-          user = "greeter";
+        settings = {
+          cursor.size = 32;
+          keyboard.layout = "us";
         };
-      };
-      security.pam.services.greetd.enableGnomeKeyring = true;
-      systemd.services.greetd.serviceConfig = {
-        Type = "idle";
-        StandardInput = "tty";
-        StandardOutput = "tty";
-        StandardError = "journal"; # Without this errors will spam on screen
-        # Without these bootlogs will spam on screen
-        TTYReset = true;
-        TTYVHangup = true;
-        TTYVTDisallocate = true;
+        cursorTheme = {
+          name = "phinger-cursors-light";
+          package = pkgs.phinger-cursors;
+        };
       };
     };
 
   flake.modules.homeManager.niri = { pkgs, ... }: {
     imports = with inputs.self.modules.homeManager; [
+      inputs.noctalia.homeModules.default
       ghostty
     ];
 
@@ -58,102 +52,82 @@
           cp ${./config.kdl} $out
         '';
 
-    programs.waybar = {
+    programs.noctalia = {
       enable = true;
-      settings.main = {
-        modules-left = [
-          "niri/window"
-          "idle_inhibitor"
-        ];
-        modules-center = [ "clock" ];
-        modules-right = [
-          "mpris"
-          "pulseaudio"
-          "cpu"
-          "memory"
-          "tray"
-        ];
-        mpris = {
-          format = "{player_icon} {dynamic}";
-          format-paused = "{status_icon} <i>{dynamic}</i>";
-          player-icons = {
-            default = "▶";
-            mpv = "🎵";
-          };
-          status-icons = {
-            paused = "⏸";
-          };
+      settings = {
+        shell = {
+          time_format = "{:%I:%M %p}";
+          external_ip_enabled = true;
+          setup_wizard_enabled = false;
         };
-        idle_inhibitor = {
-          format = "{icon}";
-          format-icons = {
-            activated = "";
-            deactivated = "";
-          };
-        };
-        cpu.format = "{usage}% ";
-        memory.format = "{}% ";
-        pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = "󰅶 {icon} {format_source}";
-          format-muted = "󰅶 {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
-          format-icons = {
-            headphone = "";
-            hands-free = "󰂑";
-            headset = "󰂑";
-            phone = "";
-            portable = "";
-            car = "";
-            default = [
-              ""
-              ""
-              ""
+        bar = {
+          default = {
+            start = [
+              "launcher"
+              "workspaces"
+            ];
+            center = [ "clock" ];
+            end = [
+              "media"
+              "tray"
+              "cpu"
+              "cpu-graph"
+              "ram"
+              "notifications"
+              "clipboard"
+              "network"
+              "bluetooth"
+              "volume"
+              "brightness"
+              "battery"
+              "control-center"
+              "session"
             ];
           };
-          on-click = "pavucontrol";
+        };
+        widget = {
+          cpu = {
+            type = "sysmon";
+            stat = "cpu_usage";
+          };
+          cpu-graph = {
+            type = "sysmon";
+            stat = "cpu_usage";
+            visualization = "graph";
+            show_value = false;
+          };
+          ram = {
+            type = "sysmon";
+            stat = "ram_used";
+          };
+        };
+        idle = {
+          behavior_order = [
+            "lock"
+            "screen-off"
+            "suspend"
+          ];
+          pre_action_fade_seconds = 4.0;
+          behavior = {
+            lock = {
+              enabled = true;
+              timeout = 600;
+              action = "lock";
+            };
+            screen-off = {
+              enabled = true;
+              timeout = 660;
+              action = "screen_off";
+            };
+            suspend = {
+              enabled = true;
+              timeout = 900;
+              action = "lock_and_suspend";
+            };
+          };
         };
       };
     };
-
-    services.swayidle =
-      let
-        lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
-        display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
-        lock_seconds = 120;
-        display_off_seconds = 180;
-        suspend_seconds = 200;
-      in
-      {
-        enable = true;
-        timeouts = [
-          {
-            timeout = lock_seconds - 30;
-            command = "${pkgs.libnotify}/bin/notify-send 'Locking in 30 seconds' -t 25000";
-          }
-          {
-            timeout = lock_seconds;
-            command = lock;
-          }
-          {
-            timeout = display_off_seconds;
-            command = display "off";
-            resumeCommand = display "on";
-          }
-          {
-            timeout = suspend_seconds;
-            command = "${pkgs.systemd}/bin/systemctl suspend";
-          }
-        ];
-        events = {
-          before-sleep = (display "off") + "; " + lock;
-          after-resume = display "on";
-          lock = (display "off") + "; " + lock;
-          unlock = display "on";
-        };
-      };
 
     home.pointerCursor = {
       enable = true;

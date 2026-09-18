@@ -69,6 +69,7 @@
     home.packages = with pkgs; [
       discord
       kdePackages.kate
+      kdePackages.dolphin
     ];
   };
 }
