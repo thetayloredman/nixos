@@ -10,6 +10,13 @@
       nh
     ];
 
+    programs.gpg.enable = true;
+    services.gpg-agent = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+    };
+
     home.stateVersion = "25.05";
     programs.home-manager.enable = true;
   };
