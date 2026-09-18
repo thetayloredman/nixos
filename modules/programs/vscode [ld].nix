@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.homeManager.vscode = { pkgs, ... }: {
+  flake.modules.homeManager.vscode = { pkgs, lib, ... }: {
     home.packages = with pkgs; [ nixd ];
 
     programs.vscode = {
@@ -32,7 +32,7 @@
           "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
           "[json]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
-        extensions =
+        extensions = lib.mkAfter (
           with pkgs.vscode-extensions;
           [
             eamodio.gitlens
@@ -67,7 +67,7 @@
               version = "2.1.3";
               sha256 = "sha256-Jssmb5owrgNWlmLFSKCgqMJKp3sPpOrlEUBwzZSSpbM=";
             }
-          ];
+          ] );
       };
     };
   };
