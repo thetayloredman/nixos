@@ -7,6 +7,8 @@
       ...
     }:
     {
+      imports = with inputs.self.nixos.modules; [ fonts ];
+
       programs.niri.enable = true;
       security.polkit.enable = true;
       services.gnome.gnome-keyring.enable = true;
@@ -20,7 +22,6 @@
         gnome-calculator
         pavucontrol
       ];
-      fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
       services.greetd = {
         enable = true;
@@ -32,7 +33,10 @@
       security.pam.services.greetd.enableGnomeKeyring = true;
       # prevent greetd from conflicting with logs at boot time
       systemd.services.greetd = {
-        serviceConfig.Type = "idle";
+        serviceConfig = {
+          Type = "idle";
+          After = [ "graphical.target" ];
+        };
       };
     };
 
