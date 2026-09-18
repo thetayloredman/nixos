@@ -6,6 +6,8 @@
       profile-devel
       mfc
       nix
+      fonts
+      ghostty
     ];
   };
 }
