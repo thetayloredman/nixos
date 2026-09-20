@@ -10,7 +10,7 @@
 
       services.postgresqlWalReceiver.receivers.synapse-db = {
         postgresqlPackage = pkgs.postgresql_16;
-        directory = /hdd/synapse-archive/wal;
+        directory = "/hdd/synapse-archive/wal";
         slot = "archive_slot";
         compress = 4;
         connection = "postgresql://walcollector@synapse-db.dc.zirco.dev";
