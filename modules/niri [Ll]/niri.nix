@@ -56,7 +56,6 @@
       enable = true;
       settings = {
         shell = {
-          time_format = "{:%I:%M %p}";
           external_ip_enabled = true;
           setup_wizard_enabled = false;
         };
