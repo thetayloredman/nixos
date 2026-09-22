@@ -6,6 +6,7 @@
         "nix-command"
         "flakes"
       ];
+      auto-optimise-store = true;
     };
     nixpkgs.config.allowUnfree = true;
   };
@@ -15,6 +16,7 @@
       package = pkgs.nix;
       extraOptions = ''
         experimental-features = nix-command flakes
+        auto-optimise-store = true
       '';
     };
     nixpkgs.config.allowUnfree = true;
