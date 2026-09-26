@@ -9,25 +9,25 @@
       imports = [
         inputs.pipemix-pipeette.homeManagerModules.pipeette
       ];
-      services.pipeette = {
-        enable = true;
-        instances = {
-          bassBoosted = {
-            peqs = [
-              {
-                channels = [
-                  "L"
-                  "R"
-                ];
-                eqtype = "Lowshelf";
-                freq = 130.0;
-                q = 5.0;
-                gain = 13.0;
-              }
-            ];
-          };
-        };
-      };
+      # services.pipeette = {
+      #   enable = true;
+      #   instances = {
+      #     bassBoosted = {
+      #       peqs = [
+      #         {
+      #           channels = [
+      #             "L"
+      #             "R"
+      #           ];
+      #           eqtype = "Lowshelf";
+      #           freq = 130.0;
+      #           q = 5.0;
+      #           gain = 13.0;
+      #         }
+      #       ];
+      #     };
+      #   };
+      # };
 
       home.packages = [
         pmtpkgs.pipemix-rust-tools
