@@ -12,7 +12,6 @@
       url = "github:nix-community/colmena";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    colmena-flake.url = "github:juspay/colmena-flake";
     flake-file.url = "github:denful/flake-file";
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
