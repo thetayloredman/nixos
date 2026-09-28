@@ -12,7 +12,7 @@ buildGoModule (finalAttrs: {
   src = logmuks-src;
 
   proxyVendor = true;
-  vendorHash = "sha256-zKH3qYXPxJI3WxmfmaEDubqOSPlvhBMgJxvXuLMej7U=";
+  vendorHash = "sha256-epTri+MEdfXt5wdVh6mXvMFTC5nc4c5cGzVLZ3VMvd4=";
 
   nativeBuildInputs = [
     nodejs
@@ -28,7 +28,7 @@ buildGoModule (finalAttrs: {
     npmRoot = "web";
     npmDeps = fetchNpmDeps {
       src = "${logmuks-src}/web";
-      hash = "sha256-t45wpiuBy9S2UaI/bQJqHOCWn11QWlcEuP7lNrgH90E=";
+      hash = "sha256-HIMtwbHX8TTuhpBNHEdkLT9j6cHbkbbqx/7nC1bgD10=";
     };
   };
 
