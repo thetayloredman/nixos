@@ -1,6 +1,6 @@
 { ... }: {
   colmena.borealis = {
-    targetHost = "10.0.0.2";
+    targetHost = "10.70.0.5";
     buildOnTarget = true;
   };
 }
