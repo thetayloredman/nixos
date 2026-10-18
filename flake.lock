@@ -421,11 +421,11 @@
     "logmuks-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1792173263,
-        "narHash": "sha256-leDz3bFQmdUu/IaH/joaR8vbE64VZlHYY9HbNOpr2E8=",
+        "lastModified": 1792364615,
+        "narHash": "sha256-fYAoLWa7BWp0+xbYKFRW7SfU8tdPpDsEwY/dQ7gZh9o=",
         "owner": "thetayloredman",
         "repo": "logmuks",
-        "rev": "6b9245afaa3e87fd69e6ef8a9d0c2407c0ae0a40",
+        "rev": "97335645051552ae8bc6acbe7468c5069808db7b",
         "type": "github"
       },
       "original": {
