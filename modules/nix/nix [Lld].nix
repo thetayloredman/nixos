@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 {
   flake.modules.nixos.nix = {
     nix.settings = {
@@ -19,6 +19,5 @@
         auto-optimise-store = true
       '';
     };
-    nixpkgs.config.allowUnfree = true;
   };
 }

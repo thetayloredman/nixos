@@ -32,7 +32,10 @@
 
     mkHomeManager = system: name: {
       ${name} = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs.legacyPackages.${system};
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
         modules = [
           inputs.self.modules.homeManager.${name}
         ];
