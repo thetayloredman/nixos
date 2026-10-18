@@ -53,6 +53,8 @@
       LC_TIME = "en_US.UTF-8";
     };
 
+    programs.thunderbird.enable = true;
+
     networking.networkmanager.enable = true;
   };
 
