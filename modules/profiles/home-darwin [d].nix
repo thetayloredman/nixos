@@ -8,6 +8,7 @@
       nix
       fonts
       ghostty
+      profile-gaming
     ];
   };
 }

@@ -53,6 +53,10 @@
       url = "git+https://git.char.systems/PipeMix/PipeMix-Rust-Tools";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    prismix = {
+      url = "git+https://codeberg.org/OliMoli/prismix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     secrets = {
       url = "git+file:./secrets";
       flake = false;

@@ -719,6 +719,26 @@
         "url": "https://git.char.systems/PipeMix/PipeMix-Rust-Tools"
       }
     },
+    "prismix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791394826,
+        "narHash": "sha256-KNvEKkHKJ0f0+sjkLZc2zlnKaReYlBT4VsSJHXA92vI=",
+        "ref": "refs/heads/main",
+        "rev": "f9155d606cc28b299eb05ce316bb0ccadb8ae371",
+        "revCount": 31,
+        "type": "git",
+        "url": "https://codeberg.org/OliMoli/prismix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/OliMoli/prismix"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -737,6 +757,7 @@
         "noctalia": "noctalia",
         "pipemix-pipeette": "pipemix-pipeette",
         "pipemix-tools": "pipemix-tools",
+        "prismix": "prismix",
         "secrets": "secrets",
         "statcon-config-src": "statcon-config-src",
         "stylix": "stylix",
