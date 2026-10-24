@@ -12,7 +12,7 @@ buildGoModule (finalAttrs: {
   src = logmuks-src;
 
   proxyVendor = true;
-  vendorHash = "sha256-39av+m9+KSrvksXzTa8iwq77BwwZ8NH/kA1t2DDcE0U=";
+  vendorHash = "sha256-BMX3vGHDdF8nRgfXRgdH9aenBsQZz+ziBAwPHqzhcnU=";
 
   nativeBuildInputs = [
     nodejs
