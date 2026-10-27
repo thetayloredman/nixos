@@ -64,7 +64,6 @@
       profile-gaming
       profile-multimedia
       profile-devel
-      mfc
       niri
     ];
 

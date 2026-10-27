@@ -40,6 +40,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-thetayloredman-resolvematrix-init.url = "github:thetayloredman/nixpkgs/resolvematrix/init";
     nixvim.url = "github:nix-community/nixvim";
     noctalia = {
       url = "github:noctalia-dev/noctalia";

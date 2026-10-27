@@ -6,6 +6,8 @@
       neovim
       vscode
       git
+      mfc
+      resolvematrix
     ];
   };
 

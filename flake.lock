@@ -593,6 +593,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-thetayloredman-resolvematrix-init": {
+      "locked": {
+        "lastModified": 1793065556,
+        "narHash": "sha256-QqfHDWJv1pLiqMgaeMRdhdQN1Hsqni/tkB3OFxlFUEg=",
+        "owner": "thetayloredman",
+        "repo": "nixpkgs",
+        "rev": "0eacb5a6cd771e8bd2f27513d98f625c37e901bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thetayloredman",
+        "ref": "resolvematrix/init",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1791487292,
@@ -733,6 +749,7 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-thetayloredman-resolvematrix-init": "nixpkgs-thetayloredman-resolvematrix-init",
         "nixvim": "nixvim",
         "noctalia": "noctalia",
         "pipemix-pipeette": "pipemix-pipeette",
