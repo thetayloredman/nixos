@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.homeManager.profile-devel = {
+  flake.modules.homeManager.profile-devel = { pkgs, ... }: {
     imports = with inputs.self.modules.homeManager; [
       zirco
       neovim
@@ -9,6 +9,7 @@
       mfc
       resolvematrix
     ];
+    home.packages = with pkgs; [ gh ];
   };
 
   flake.modules.nixos.profile-devel = {
