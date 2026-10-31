@@ -42,10 +42,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-thetayloredman-resolvematrix-init.url = "github:thetayloredman/nixpkgs/resolvematrix/init";
     nixvim.url = "github:nix-community/nixvim";
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
     pipemix-pipeette = {
       url = "git+https://git.char.systems/PipeMix/pipemix-rust-pipeette?ref=filter-wip";
       inputs.nixpkgs.follows = "nixpkgs";
