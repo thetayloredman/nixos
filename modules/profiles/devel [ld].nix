@@ -8,6 +8,7 @@
       git
       mfc
       resolvematrix
+      matrix-rig
     ];
     home.packages = with pkgs; [ gh ];
   };
