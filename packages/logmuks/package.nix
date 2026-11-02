@@ -1,9 +1,14 @@
 {
+  buildGoModule,
+  fetchNpmDeps,
+
+  nodejs,
+  npmHooks,
+  pkg-config,
+  libheif,
+
   logmuks-src,
-  pkgs,
-  ...
 }:
-with pkgs;
 buildGoModule (finalAttrs: {
   # modified from https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/gomuks-web/package.nix
   pname = "logmuks";
@@ -12,7 +17,7 @@ buildGoModule (finalAttrs: {
   src = logmuks-src;
 
   proxyVendor = true;
-  vendorHash = "sha256-BMX3vGHDdF8nRgfXRgdH9aenBsQZz+ziBAwPHqzhcnU=";
+  vendorHash = "sha256-ujhco7tObuHceNpTACse7mVA+Vhckhtkb3kHYHy3wXs=";
 
   nativeBuildInputs = [
     nodejs

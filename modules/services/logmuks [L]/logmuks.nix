@@ -1,12 +1,13 @@
-{ inputs, lib, ... }:
+{
+  lib,
+  self,
+  ...
+}:
 {
   flake.modules.nixos.logmuks =
     { pkgs, config, ... }:
     let
-      logmuks = import ../../../packages/logmuks/package.nix {
-        inherit pkgs;
-        inherit (inputs) logmuks-src;
-      };
+      logmuks = self.packages.${pkgs.stdenv.hostPlatform.system}.logmuks;
 
       instances = {
         main = {
