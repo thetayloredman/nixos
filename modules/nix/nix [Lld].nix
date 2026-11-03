@@ -7,6 +7,10 @@
         "flakes"
       ];
       auto-optimise-store = true;
+      trusted-users = [
+        "root"
+        "logn"
+      ];
     };
     nixpkgs.config.allowUnfree = true;
   };
@@ -14,10 +18,13 @@
   flake.modules.homeManager.nix = { pkgs, ... }: {
     nix = {
       package = pkgs.nix;
-      extraOptions = ''
-        experimental-features = nix-command flakes
-        auto-optimise-store = true
-      '';
+      settings = {
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        auto-optimise-store = true;
+      };
     };
   };
 }

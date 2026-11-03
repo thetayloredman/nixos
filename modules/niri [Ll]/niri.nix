@@ -20,9 +20,6 @@
       services.gnome.gnome-keyring.enable = true;
 
       environment.systemPackages = with pkgs; [
-        fuzzel
-        mako
-        swaylock
         xwayland-satellite
         playerctl
         gnome-calculator
