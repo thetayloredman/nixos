@@ -53,6 +53,7 @@
             arktypeio.arkdark
             jnoortheen.nix-ide
             ExodiusStudios.comment-anchors
+            myriad-dreamin.tinymist
           ]
           ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
