@@ -1,0 +1,22 @@
+From 71c9c23cd79ce112c18f09a2ea7a812d902a8c7f Mon Sep 17 00:00:00 2001
+From: Logan Devine <logan@zirco.dev>
+Date: Fri, 17 Jul 2026 19:50:56 -0700
+Subject: [PATCH] feat: add room alias to settings view
+
+---
+ web/src/ui/settings/RoomSettings.tsx | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/web/src/ui/settings/RoomSettings.tsx b/web/src/ui/settings/RoomSettings.tsx
+index a7c067a15..63eed351b 100644
+--- a/web/src/ui/settings/RoomSettings.tsx
++++ b/web/src/ui/settings/RoomSettings.tsx
+@@ -150,6 +150,8 @@ const RoomSettings = ({ room }: RoomSettingsProps) => {
+ 	return <div className="room-details">
+ 		<div className="header">
+ 			<h2>Room info</h2>
++			<code className="room-id">{roomMeta?.canonical_alias ?? "no alias"}</code>
++			<br />
+ 			<code className="room-id">{room.roomID}</code>
+ 		</div>
+ 		<div className="general-info">

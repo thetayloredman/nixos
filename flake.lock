@@ -341,6 +341,22 @@
         "type": "gitlab"
       }
     },
+    "gomuks-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793660222,
+        "narHash": "sha256-AQVcpSaYaJW0F8yg+sxqS7TTgX9gUvBYDL4OTE43oU4=",
+        "owner": "gomuks",
+        "repo": "gomuks",
+        "rev": "3c97ff1343a9a8e6ab86bd85dc7e7161b80397ec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gomuks",
+        "repo": "gomuks",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -415,22 +431,6 @@
       "original": {
         "owner": "denful",
         "repo": "import-tree",
-        "type": "github"
-      }
-    },
-    "logmuks-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1793660424,
-        "narHash": "sha256-p68045SfK0EHMPzROtT7vpNN+zCiGHP89HGJLAEL1Yk=",
-        "owner": "thetayloredman",
-        "repo": "logmuks",
-        "rev": "c606f9998d3b3bcffe0831aa6857f48cae79a646",
-        "type": "github"
-      },
-      "original": {
-        "owner": "thetayloredman",
-        "repo": "logmuks",
         "type": "github"
       }
     },
@@ -769,10 +769,10 @@
         "colmena": "colmena",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
+        "gomuks-src": "gomuks-src",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "import-tree": "import-tree",
-        "logmuks-src": "logmuks-src",
         "mfc-pkgs": "mfc-pkgs",
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",

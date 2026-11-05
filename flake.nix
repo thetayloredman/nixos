@@ -14,6 +14,10 @@
     };
     flake-file.url = "github:denful/flake-file";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    gomuks-src = {
+      url = "github:gomuks/gomuks";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,10 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:denful/import-tree";
-    logmuks-src = {
-      url = "github:thetayloredman/logmuks";
-      flake = false;
-    };
     mfc-pkgs = {
       url = "github:thetayloredman/mfc";
       inputs.nixpkgs.follows = "nixpkgs";

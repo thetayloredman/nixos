@@ -1,76 +1,50 @@
 {
-  buildGoModule,
-  fetchNpmDeps,
+  fetchpatch,
+  lib,
 
-  nodejs,
-  npmHooks,
-  pkg-config,
-  libheif,
-
-  logmuks-src,
+  gomuks-web,
+  gomuks-src,
 }:
-buildGoModule (finalAttrs: {
-  # modified from https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/gomuks-web/package.nix
-  pname = "logmuks";
-  version = "69.69";
 
-  src = logmuks-src;
-
-  proxyVendor = true;
+gomuks-web.overrideAttrs (old: {
+  src = old.src // gomuks-src;
   vendorHash = "sha256-ujhco7tObuHceNpTACse7mVA+Vhckhtkb3kHYHy3wXs=";
-
-  nativeBuildInputs = [
-    nodejs
-    npmHooks.npmConfigHook
-    pkg-config
-  ];
-
-  buildInputs = [
-    libheif
-  ];
-
-  env = {
-    npmRoot = "web";
-    npmDeps = fetchNpmDeps {
-      src = "${logmuks-src}/web";
+  env = old.env // {
+    npmDeps = old.env.npmDeps.overrideAttrs {
       hash = "sha256-esb/B3tXmPWb3o53/wI63EC587+2Z3KEjJeAlES7Oxo=";
     };
   };
 
-  postPatch = ''
-    substituteInPlace ./web/build-wasm.sh \
-      --replace-fail 'go.mau.fi/gomuks/version.Tag=$(git describe --exact-match --tags 2>/dev/null)' "go.mau.fi/gomuks/version.Tag=v0.6969.0" \
-      --replace-fail 'go.mau.fi/gomuks/version.Commit=$(git rev-parse HEAD)' "go.mau.fi/gomuks/version.Commit=unknown"
-  '';
-
-  doCheck = false;
-
-  tags = [
-    "goolm"
-    "libheif"
-    "sqlite_fts5"
+  patches = (old.patches or [ ]) ++ [
+    (fetchpatch {
+      # hicli/jsoncmd,web/api: add support for MSC4441 profile notes
+      url = "https://github.com/thetayloredman/logmuks/commit/50496b13333ff4685f2dc825654050ed3b960930.patch";
+      hash = "sha256-Q6Maq4WRPV5aZS0ra732i8kTawnkzep7tcJzjz8LxGk=";
+    })
+    (fetchpatch {
+      # web/rightpanel: add profile note rendering
+      url = "https://github.com/thetayloredman/logmuks/commit/70ad20cc6137b4bceaab9c3c1534ede5faf481a4.patch";
+      hash = "sha256-xQhBFy9lkx4ftLM8aWWyInYu0srx7WALiEXQHSFKM2w=";
+    })
+    (fetchpatch {
+      # banners idk
+      url = "https://git.squarebowl.club/plate/gomuks/commit/7ab5263153a55f25bb288b126964b1fcbee8e550.patch";
+      hash = "sha256-Sc13mAyaqgrzOvGqvQ3FJ1scHy4+RFg6xaOE7kP/tuo=";
+    })
+    (fetchpatch {
+      # banner fix
+      url = "https://git.squarebowl.club/plate/gomuks/commit/ea55d607bc17efb4e90eb4dd4a154e6a70570d8c.patch";
+      hash = "sha256-t3tFRvSsbUwE3rKVZWzsZgx0ZRzRVzoXJJXciOVLIVA=";
+    })
+    (fetchpatch {
+      # more banner
+      url = "https://git.squarebowl.club/plate/gomuks/commit/03a8161512d4bbd620f6aa7c91baa63818fe0ff1.patch";
+      hash = "sha256-xSbJQib9f6On7MxDZ4FP83IrM436+GpyMtOjCwxeqKI=";
+    })
+    ./01-reference-links.patch
+    ./02-the-demorgenning.patch
+    ./03-add-room-alias-to-settings.patch
+    ./04-internal-dashboards.patch
+    ./05-hide-fingerprint.patch
   ];
-
-  ldflags = [
-    "-X 'go.mau.fi/gomuks/version.Tag=v0.6969.0'"
-    "-X 'go.mau.fi/gomuks/version.Commit=unknown'"
-    "-X \"go.mau.fi/gomuks/version.BuildTime=$(date -Iseconds)\""
-    "-X \"maunium.net/go/mautrix.GoModVersion=$(cat go.mod | grep 'maunium.net/go/mautrix ' | head -n1 | awk '{ print $2 })\""
-  ];
-
-  subPackages = [
-    "cmd/gomuks"
-    "cmd/gomuks-terminal"
-    "cmd/archivemuks"
-  ];
-
-  preBuild = ''
-    CGO_ENABLED=0 go generate ./web
-  '';
-
-  postInstall = ''
-    mv $out/bin/gomuks $out/bin/gomuks-web
-  '';
-
-  passthru.updateScript = ./update.sh;
 })

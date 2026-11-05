@@ -1,0 +1,48 @@
+From 21382bc0d0798deb05c891a0302ef5825463b610 Mon Sep 17 00:00:00 2001
+From: Logan Devine <logan@zirco.dev>
+Date: Sat, 15 Aug 2026 18:13:11 -0700
+Subject: [PATCH] add buttons to jump to internal dashboards
+
+---
+ web/src/ui/rightpanel/RightPanel.css          | 4 +++-
+ web/src/ui/rightpanel/UserExtendedProfile.tsx | 9 +++++++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/web/src/ui/rightpanel/RightPanel.css b/web/src/ui/rightpanel/RightPanel.css
+index 8796aa5d9..1eeb05d5b 100644
+--- a/web/src/ui/rightpanel/RightPanel.css
++++ b/web/src/ui/rightpanel/RightPanel.css
+@@ -215,7 +215,9 @@ div.right-panel-content.user {
+ 
+ 		> div.view-buttons {
+ 			grid-column: span 2;
+-			display: flex;
++			display: grid;
++			grid-template-columns: repeat(4, 1fr);
++			gap: 0.25rem;
+ 
+ 			> button {
+ 				width: 100%;
+diff --git a/web/src/ui/rightpanel/UserExtendedProfile.tsx b/web/src/ui/rightpanel/UserExtendedProfile.tsx
+index bd7deed9f..8ba552f3f 100644
+--- a/web/src/ui/rightpanel/UserExtendedProfile.tsx
++++ b/web/src/ui/rightpanel/UserExtendedProfile.tsx
+@@ -185,9 +185,18 @@ const UserExtendedProfile = ({
+ 	const viewExtensibleProfile = () => {
+ 		openModal(modals.jsonView(profile))
+ 	}
++	const openUrl = (url: string) => {
++		window.open(url, "_blank", "noopener,noreferrer")
++	}
++	const efuDashboardUrl = `https://metrics.zirco.dev/d/ad9f7kx/events-from-user`
++		+ `?orgId=1&from=now-30d&to=now&timezone=browser&var-user=${userID}`
++	const freqDashboardUrl = `https://metrics.zirco.dev/d/ad9j9qx/frequented-rooms-by-user`
++		+ `?var-time_window=1m&orgId=1&from=now-6M&to=now&timezone=browser&var-user=${userID}`
+ 	const viewButtons = <div className="view-buttons">
+ 		{profile && <button onClick={viewExtensibleProfile}>Global profile</button>}
+ 		{memberEvt && room && <button onClick={viewMemberEvent}>Member event</button>}
++		<button onClick={() => openUrl(freqDashboardUrl)}>Frequented rooms</button>
++		<button onClick={() => openUrl(efuDashboardUrl)}>Sent events</button>
+ 	</div>
+ 	const baseContent = ((memberEvt && room) || loading || errors) ? <div className="extended-profile">
+ 		{loading && <ScaleLoader className="user-info-loader" color="var(--primary-color)"/>}

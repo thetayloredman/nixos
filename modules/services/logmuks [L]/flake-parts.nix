@@ -1,7 +1,7 @@
 { ... }: {
   flake-file.inputs = {
-    logmuks-src = {
-      url = "github:thetayloredman/logmuks";
+    gomuks-src = {
+      url = "github:gomuks/gomuks";
       flake = false;
     };
   };
