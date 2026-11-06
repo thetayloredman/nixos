@@ -8,7 +8,7 @@
 
 gomuks-web.overrideAttrs (old: {
   src = old.src // gomuks-src;
-  vendorHash = "sha256-ujhco7tObuHceNpTACse7mVA+Vhckhtkb3kHYHy3wXs=";
+  vendorHash = "sha256-OKZLMNPpFIvH/CTg2PKuuze/l0K1x2nNvqea6eCztW8=";
   env = old.env // {
     npmDeps = old.env.npmDeps.overrideAttrs {
       hash = "sha256-esb/B3tXmPWb3o53/wI63EC587+2Z3KEjJeAlES7Oxo=";
