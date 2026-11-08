@@ -7,10 +7,12 @@
       vscode
       git
       mfc
-      resolvematrix
-      matrix-rig
     ];
-    home.packages = with pkgs; [ gh ];
+    home.packages = with pkgs; [
+      gh
+      matrix-rig
+      resolvematrix
+    ];
   };
 
   flake.modules.nixos.profile-devel = {
