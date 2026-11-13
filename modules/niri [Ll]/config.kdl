@@ -51,6 +51,10 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    geometry-corner-radius 12
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
