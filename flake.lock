@@ -344,11 +344,11 @@
     "gomuks-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1794373998,
-        "narHash": "sha256-C221m6sPHUdyb+bI7dpjNCj2ldZBB2//rANNWFvMKqs=",
+        "lastModified": 1794854971,
+        "narHash": "sha256-2SibQfjc/EaPsOK5k5dZvseqDxuVc3i+kOZsIFj5qJo=",
         "owner": "gomuks",
         "repo": "gomuks",
-        "rev": "84afe4c41292a0f131e53aecdcd887869e027827",
+        "rev": "4d52790e2f7aa5948429e3841d1e834752fa0d5f",
         "type": "github"
       },
       "original": {
