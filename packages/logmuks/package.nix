@@ -4,27 +4,25 @@
 
   gomuks-web,
   gomuks-src,
+
+  fetchNpmDeps,
 }:
 
 gomuks-web.overrideAttrs (old: {
   src = old.src // gomuks-src;
-  vendorHash = "sha256-OKZLMNPpFIvH/CTg2PKuuze/l0K1x2nNvqea6eCztW8=";
+  vendorHash = "sha256-Qp431FgpBvPVo1DkG13Qy3Hv/vbMtgKn6vS6CD9anXc=";
   env = old.env // {
-    npmDeps = old.env.npmDeps.overrideAttrs {
-      hash = "sha256-esb/B3tXmPWb3o53/wI63EC587+2Z3KEjJeAlES7Oxo=";
+    npmDeps = fetchNpmDeps {
+      src = "${gomuks-src}/web";
+      hash = "sha256-gwkb3tGhmcbfclJMIO8rTOexzFfUFOmYE93vdgwUK/Y=";
     };
   };
 
   patches = (old.patches or [ ]) ++ [
     (fetchpatch {
-      # hicli/jsoncmd,web/api: add support for MSC4441 profile notes
-      url = "https://github.com/thetayloredman/logmuks/commit/50496b13333ff4685f2dc825654050ed3b960930.patch";
-      hash = "sha256-Q6Maq4WRPV5aZS0ra732i8kTawnkzep7tcJzjz8LxGk=";
-    })
-    (fetchpatch {
-      # web/rightpanel: add profile note rendering
-      url = "https://github.com/thetayloredman/logmuks/commit/70ad20cc6137b4bceaab9c3c1534ede5faf481a4.patch";
-      hash = "sha256-xQhBFy9lkx4ftLM8aWWyInYu0srx7WALiEXQHSFKM2w=";
+      # add support for MSC4441 profile notes
+      url = "https://github.com/gomuks/gomuks/pull/744.patch";
+      hash = "sha256-HFZaKYXQ3mdHZR0zT9inmQRI+1YI3O9FcrToPcBGLT8=";
     })
     (fetchpatch {
       # banners idk
