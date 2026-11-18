@@ -22,7 +22,7 @@ gomuks-web.overrideAttrs (old: {
     (fetchpatch {
       # add support for MSC4441 profile notes
       url = "https://github.com/gomuks/gomuks/pull/744.patch";
-      hash = "sha256-HFZaKYXQ3mdHZR0zT9inmQRI+1YI3O9FcrToPcBGLT8=";
+      hash = "sha256-6yxReEh+rbl/sqh7R7r6kRqflIrH8Ob9g/vMqbrfIpw=";
     })
     (fetchpatch {
       # banners idk
