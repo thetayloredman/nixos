@@ -13,7 +13,18 @@ let
   yamlFormat = formats.yaml { };
 
   mkConfig =
-    hostname: yamlFormat.generate "${hostname}.yaml" (import ./gatus/${hostname}.nix { inherit lib; });
+    hostname:
+    let
+      generated = yamlFormat.generate "${hostname}.yaml" (
+        import ./gatus/${hostname}.nix { inherit lib; }
+      );
+    in
+    # Gatus shits itself when it sees a room ID with a ! prefix, so we jankily
+    # sneak quotes in, since formats.yaml can't.
+    runCommand "${hostname}-patched.yaml" { } ''
+      sed -E 's|(internal-room-id: )(\$\{[^}]+\})|\1"\2"|' \
+        ${generated} > $out
+    '';
 
   configs = lib.genAttrs hosts (hostname: mkConfig hostname);
 

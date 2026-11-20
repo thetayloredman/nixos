@@ -11,11 +11,12 @@ in
         redwood-wg-ether-privkey.file = "${secrets}/redwood-wg-ether-privkey.age";
         redwood-wg-dn42-privkey.file = "${secrets}/redwood-wg-dn42-privkey.age";
       })
+
       (lib.mkIf (config.networking.hostName == "borealis") {
         ops-passwd.file = "${secrets}/ops-passwd.age";
         borealis-wg-dc-privkey.file = "${secrets}/borealis-wg-dc-privkey.age";
         borealis-cloudflare-acme.file = "${secrets}/borealis-cloudflare-acme.age";
-        borealis-gatus-env.file = "${secrets}/borealis-gatus-env.age";
+        gatus-env.file = "${secrets}/gatus-env.age";
         pbs-password-hash.file = "${secrets}/pbs-password-hash.age";
         synapse-db-wal-archiver-pgpass = {
           file = "${secrets}/synapse-db-wal-archiver-pgpass.age";
@@ -23,6 +24,11 @@ in
           group = "postgres";
           mode = "0400";
         };
+      })
+
+      # hesdc-gatus
+      (lib.mkIf (config.networking.hostName == "gatus") {
+        gatus-env.file = "${secrets}/gatus-env.age";
       })
     ];
 

@@ -827,11 +827,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1789348024,
-        "narHash": "sha256-F+lG6z7iuz+VmilZY2z1HvaDYD3v0xss/CEzNkg7WY4=",
+        "lastModified": 1795144917,
+        "narHash": "sha256-MGyTqeqnrag61M1647SXi2Q2Rvsn5Uf/S9I7EoIi5SQ=",
         "ref": "refs/heads/main",
-        "rev": "2805fc2b47b3ef4ea6e5f2630d4dcdde9e0b13e5",
-        "revCount": 15,
+        "rev": "339aa841c16e11b10049c0f7a95aef78bb84651d",
+        "revCount": 17,
         "type": "git",
         "url": "file:./secrets"
       },

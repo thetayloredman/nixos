@@ -9,6 +9,12 @@
       theming
     ];
 
+    nix.gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
+
     services.openssh.enable = true;
     networking.firewall.allowedTCPPorts = [ 22 ];
     networking.networkmanager.enable = true;

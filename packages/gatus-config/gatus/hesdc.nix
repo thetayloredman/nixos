@@ -28,7 +28,7 @@ import ./base.nix { inherit lib; } "hesdc"
       ])
 
       (map (withGroup "Services") [
-        (icmp.ping "DN42 us-ky1" "dn42-us-ky1.dc.zirco.dev")
+        (icmp.ping "DN42 us-ky1" "dn42-logn-us-ky1.dc.zirco.dev")
         (http.get "Pastebin" "https://paste.zirco.dev")
         (http.get "Playground" "https://play.zirco.dev")
         (http.get "zirco.dev" "https://zirco.dev")

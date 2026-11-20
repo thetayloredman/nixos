@@ -27,7 +27,7 @@ rec {
         ++ lib.optional checkCert "[CERTIFICATE_EXPIRATION] > 168h";
       };
 
-    withInsecure = x: x // { insecure = true; };
+    withInsecure = x: x // { client.insecure = true; };
 
     get = base "GET";
     getInsecure = name: url: withInsecure (get name url);
