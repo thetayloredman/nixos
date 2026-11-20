@@ -750,7 +750,6 @@
         "pipemix-pipeette": "pipemix-pipeette",
         "pipemix-tools": "pipemix-tools",
         "secrets": "secrets",
-        "statcon-config-src": "statcon-config-src",
         "stylix": "stylix",
         "treefmt-nix": "treefmt-nix",
         "zirco-pkgs": "zirco-pkgs"
@@ -854,22 +853,6 @@
         "ref": "release-26.05",
         "repo": "nixpkgs",
         "type": "github"
-      }
-    },
-    "statcon-config-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1789347503,
-        "narHash": "sha256-jrRZQ48UbdtTK3YgMSP2m6T8TECcvsVOSRUt0T4AJf4=",
-        "ref": "refs/heads/main",
-        "rev": "093b2d42b473b157992d1cec33370ab86bfc7be2",
-        "revCount": 30,
-        "type": "git",
-        "url": "file:./statcon-config"
-      },
-      "original": {
-        "type": "git",
-        "url": "file:./statcon-config"
       }
     },
     "stylix": {

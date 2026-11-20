@@ -54,10 +54,6 @@
       url = "git+file:./secrets";
       flake = false;
     };
-    statcon-config-src = {
-      url = "git+file:./statcon-config";
-      flake = false;
-    };
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
