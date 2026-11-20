@@ -1,41 +1,13 @@
-{ inputs, ... }: {
+{ self, ... }: {
   flake.modules.nixos.gatus-borealis =
     { pkgs, config, ... }:
     let
-      inherit (pkgs.stdenv) mkDerivation;
-
-      statconGeneratedConfig = mkDerivation (finalAttrs: {
-        pname = "statcon-config";
-        version = "1.0.0";
-        src = inputs.statcon-config-src;
-
-        nativeBuildInputs = with pkgs; [
-          nodejs
-          pnpm
-          pnpmConfigHook
-          tsx
-        ];
-
-        pnpmDeps = pkgs.fetchPnpmDeps {
-          inherit (finalAttrs) pname version src;
-          fetcherVersion = 4;
-          hash = "sha256-+Hkwn+nTPVL4Je/S28IBe78TCkI+zR7CjPExEX/oxks=";
-        };
-
-        buildPhase = ''
-          mkdir -p $out
-          pnpm run build
-          for hostfile in ./config/hosts/*.conf.ts; do
-            host=$(basename $hostfile .conf.ts)
-            tsx "$hostfile" > $out/$host.yaml
-          done
-        '';
-      });
+      gatus-config = self.packages.${pkgs.stdenv.hostPlatform.system}.gatus-config;
     in
     {
       services.gatus = {
         enable = true;
-        configFile = "${statconGeneratedConfig}/borealis.yaml";
+        configFile = gatus-config.borealis;
         environmentFile = config.age.secrets.borealis-gatus-env.path;
       };
 
