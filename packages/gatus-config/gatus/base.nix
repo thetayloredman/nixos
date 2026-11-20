@@ -35,7 +35,7 @@ hostname: {
       matrix = {
         server-url = "\${MATRIX_BASEURL}";
         access-token = "\${MATRIX_ACCESS_TOKEN}";
-        room-id = "\${MATRIX_ROOM_ID}";
+        internal-room-id = "\${MATRIX_ROOM_ID}";
         inherit default-alert;
       };
     };
