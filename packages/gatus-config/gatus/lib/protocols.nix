@@ -73,8 +73,12 @@ rec {
     in
     old
     // {
-      conditions = old.conditions ++ [ "[BODY] == GOOD" ];
+      conditions = [
+        "[STATUS] == 200"
+        "[CONNECTED] == true"
+        "[BODY] == GOOD"
+      ];
       interval = "5m";
-      client.timeout = "60s";
+      client.timeout = "120s";
     };
 }
