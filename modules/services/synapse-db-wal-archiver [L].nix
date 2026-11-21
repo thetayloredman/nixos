@@ -9,7 +9,7 @@
       ];
 
       services.postgresqlWalReceiver.receivers.synapse-db = {
-        postgresqlPackage = pkgs.postgresql_16;
+        postgresqlPackage = pkgs.postgresql_19;
         directory = "/hdd/synapse-archive/wal";
         slot = "archive_slot";
         compress = 4;
@@ -40,7 +40,7 @@
 
           mkdir -p "$target"
 
-          ${pkgs.postgresql_16}/bin/pg_basebackup \
+          ${pkgs.postgresql_19}/bin/pg_basebackup \
             --dbname='postgresql://walcollector@synapse-db.dc.zirco.dev' \
             --format=tar \
             --gzip \
