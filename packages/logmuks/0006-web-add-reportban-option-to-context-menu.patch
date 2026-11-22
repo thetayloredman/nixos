@@ -1,0 +1,99 @@
+From fdb2adfa084d4e809b9c884fb4a1323dd1fe7a89 Mon Sep 17 00:00:00 2001
+From: Logan Devine <logan@zirco.dev>
+Date: Sat, 21 Nov 2026 16:04:53 -0800
+Subject: [PATCH 6/6] web: add reportban option to context menu
+
+---
+ web/src/ui/menu/useSecondaryItems.tsx        | 21 +++++++++++++++++---
+ web/src/ui/modal/ConfirmWithMessageModal.tsx |  3 ++-
+ 2 files changed, 20 insertions(+), 4 deletions(-)
+
+diff --git a/web/src/ui/menu/useSecondaryItems.tsx b/web/src/ui/menu/useSecondaryItems.tsx
+index 219b8dc7..665e9b2c 100644
+--- a/web/src/ui/menu/useSecondaryItems.tsx
++++ b/web/src/ui/menu/useSecondaryItems.tsx
+@@ -20,7 +20,7 @@ import { MemDBEvent } from "@/api/types"
+ import { quote } from "@/api/types/commands.ts"
+ import { displayAsRedacted } from "@/util/displayAsRedacted.ts"
+ import { getEventLevel } from "@/util/powerlevel.ts"
+-import { ensureString, getLocalpart } from "@/util/validation.ts"
++import { ensureString, getLocalpart, getServerName } from "@/util/validation.ts"
+ import { ConfirmWithMessageModal, ModalCloseContext, ModalContext, modals } from "../modal"
+ import { RoomContext, RoomContextData } from "../roomview/roomcontext.ts"
+ import JSONView from "../util/JSONView.tsx"
+@@ -28,6 +28,7 @@ import { getPending, getPowerLevels } from "./util.ts"
+ import ViewSourceIcon from "@/icons/code.svg?react"
+ import DeleteIcon from "@/icons/delete.svg?react"
+ import EmojiIcon from "@/icons/emoji-categories/smileys-emotion.svg?react"
++import BanIcon from "@/icons/gavel.svg?react"
+ import PinIcon from "@/icons/pin.svg?react"
+ import RefreshIcon from "@/icons/refresh.svg?react"
+ import ReportIcon from "@/icons/report.svg?react"
+@@ -97,7 +98,7 @@ export const useSecondaryItems = (
+ 	const onClickViewReactions = () => {
+ 		openModal(modals.eventReactions(roomCtx, evt))
+ 	}
+-	const onClickReport = () => {
++	const onClickReport = (initial?: string) => () => {
+ 		openModal({
+ 			dimmed: true,
+ 			boxed: true,
+@@ -108,6 +109,7 @@ export const useSecondaryItems = (
+ 					description="Report this message to your homeserver administrator?"
+ 					placeholder="Reason for report"
+ 					confirmButton="Send report"
++					initialValue={initial}
+ 					onConfirm={reason => client.rpc.reportEvent(evt.room_id, evt.event_id, reason)}
+ 				/>
+ 			</RoomContext>,
+@@ -182,6 +184,7 @@ export const useSecondaryItems = (
+ 		&& (evt.sender === client.userID || ownPL >= redactOtherPL)
+ 	// TODO check server admin status and room PLs
+ 	const canUnredact = displayAsRedacted(evt, memberEvt, roomCtx.store)
++	const isZircoDotDev = getServerName(client.userID) === "zirco.dev"
+ 
+ 	return <>
+ 		<button onClick={onClickViewSource}><ViewSourceIcon/>{names && "View source"}</button>
+@@ -199,9 +202,21 @@ export const useSecondaryItems = (
+ 			: <button onClick={onClickPin(true)} title={pendingTitle} disabled={isPending}>
+ 				<PinIcon/>{names && "Pin message"}
+ 			</button>)}
+-		{!isFake && <button onClick={onClickReport} disabled={isPending} title={pendingTitle}>
++		{!isFake && <button onClick={onClickReport()} disabled={isPending} title={pendingTitle}>
+ 			<ReportIcon/>{names && "Report"}
+ 		</button>}
++		{!isFake && isZircoDotDev && <button
++			onClick={onClickReport("/ban cme spam")}
++			disabled={isPending}
++			title={pendingTitle}
++			className="redact-button"
++		><BanIcon/>{names && "Ban (CME)"}</button>}
++		{!isFake && isZircoDotDev && <button
++			onClick={onClickReport("/ban zirco spam")}
++			disabled={isPending}
++			title={pendingTitle}
++			className="redact-button"
++		><BanIcon/>{names && "Ban (Zirco)"}</button>}
+ 		{(canRedact || isFake) && <button
+ 			onClick={onClickRedact}
+ 			disabled={isPending}
+diff --git a/web/src/ui/modal/ConfirmWithMessageModal.tsx b/web/src/ui/modal/ConfirmWithMessageModal.tsx
+index ed94d42f..49a62a4a 100644
+--- a/web/src/ui/modal/ConfirmWithMessageModal.tsx
++++ b/web/src/ui/modal/ConfirmWithMessageModal.tsx
+@@ -19,10 +19,11 @@ import ConfirmModal, { ConfirmProps } from "./ConfirmModal.tsx"
+ 
+ export interface ConfirmWithMessageProps extends Omit<ConfirmProps<readonly [string]>, "confirmArgs" | "extraContent"> {
+ 	placeholder: string
++       initialValue?: string
+ }
+ 
+ const ConfirmWithMessageModal = (props: ConfirmWithMessageProps) => {
+-	const [confirmArgs, setConfirmArgs] = useState<readonly [string]>([""])
++	const [confirmArgs, setConfirmArgs] = useState<readonly [string]>([props.initialValue ?? ""])
+ 	return <ConfirmModal<readonly [string]>
+ 		{...props}
+ 		confirmArgs={confirmArgs}
+-- 
+2.56.0
+

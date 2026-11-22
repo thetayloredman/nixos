@@ -1,14 +1,14 @@
-From dcd643e16e228fb1eb219e814dd11c179e3ec38c Mon Sep 17 00:00:00 2001
+From 2276d389095570d33cfd55b966063cdcd110ce75 Mon Sep 17 00:00:00 2001
 From: Logan Devine <logan@zirco.dev>
 Date: Mon, 14 Sep 2026 15:58:17 -0700
-Subject: [PATCH] composer: always hide the more obvious fingerprints
+Subject: [PATCH 5/6] composer: always hide the more obvious fingerprints
 
 ---
  web/src/ui/composer/MessageComposer.tsx | 4 +++-
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/web/src/ui/composer/MessageComposer.tsx b/web/src/ui/composer/MessageComposer.tsx
-index 242073777..a4e713eec 100644
+index 24207377..a4e713ee 100644
 --- a/web/src/ui/composer/MessageComposer.tsx
 +++ b/web/src/ui/composer/MessageComposer.tsx
 @@ -386,7 +386,9 @@ const MessageComposer = () => {
@@ -22,3 +22,6 @@ index 242073777..a4e713eec 100644
  		}
  		client.sendMessage({
  			room_id: room.roomID,
+-- 
+2.56.0
+

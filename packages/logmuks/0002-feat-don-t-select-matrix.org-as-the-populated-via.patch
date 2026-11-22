@@ -1,14 +1,14 @@
-From ecbf105d4358a0ad500e63f69c5e76d8a8a4e3ac Mon Sep 17 00:00:00 2001
+From 5bf624ad8684ee01e7f14c6d070dbe3b0dd2ca7d Mon Sep 17 00:00:00 2001
 From: Logan Devine <logan@zirco.dev>
 Date: Wed, 8 Jul 2026 11:10:01 -0700
-Subject: [PATCH] feat: don't select matrix.org as the 'populated' via
+Subject: [PATCH 2/6] feat: don't select matrix.org as the 'populated' via
 
 ---
  web/src/api/statestore/room.ts | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/web/src/api/statestore/room.ts b/web/src/api/statestore/room.ts
-index 8f2007606..3ddddc053 100644
+index 8f200760..3ddddc05 100644
 --- a/web/src/api/statestore/room.ts
 +++ b/web/src/api/statestore/room.ts
 @@ -394,7 +394,7 @@ export class RoomStateStore {
@@ -20,3 +20,6 @@ index 8f2007606..3ddddc053 100644
  				vias.push(serverName)
  				break
  			}
+-- 
+2.56.0
+

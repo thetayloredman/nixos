@@ -1,7 +1,7 @@
-From 21382bc0d0798deb05c891a0302ef5825463b610 Mon Sep 17 00:00:00 2001
+From 3c26361b040f9db1b7e8bdc13b19c0d1677513ac Mon Sep 17 00:00:00 2001
 From: Logan Devine <logan@zirco.dev>
 Date: Sat, 15 Aug 2026 18:13:11 -0700
-Subject: [PATCH] add buttons to jump to internal dashboards
+Subject: [PATCH 4/6] add buttons to jump to internal dashboards
 
 ---
  web/src/ui/rightpanel/RightPanel.css          | 4 +++-
@@ -9,10 +9,10 @@ Subject: [PATCH] add buttons to jump to internal dashboards
  2 files changed, 12 insertions(+), 1 deletion(-)
 
 diff --git a/web/src/ui/rightpanel/RightPanel.css b/web/src/ui/rightpanel/RightPanel.css
-index 8796aa5d9..1eeb05d5b 100644
+index 1e09a69a..31f95b04 100644
 --- a/web/src/ui/rightpanel/RightPanel.css
 +++ b/web/src/ui/rightpanel/RightPanel.css
-@@ -215,7 +215,9 @@ div.right-panel-content.user {
+@@ -210,7 +210,9 @@ div.right-panel-content.user {
  
  		> div.view-buttons {
  			grid-column: span 2;
@@ -24,7 +24,7 @@ index 8796aa5d9..1eeb05d5b 100644
  			> button {
  				width: 100%;
 diff --git a/web/src/ui/rightpanel/UserExtendedProfile.tsx b/web/src/ui/rightpanel/UserExtendedProfile.tsx
-index bd7deed9f..8ba552f3f 100644
+index bd7deed9..8ba552f3 100644
 --- a/web/src/ui/rightpanel/UserExtendedProfile.tsx
 +++ b/web/src/ui/rightpanel/UserExtendedProfile.tsx
 @@ -185,9 +185,18 @@ const UserExtendedProfile = ({
@@ -46,3 +46,6 @@ index bd7deed9f..8ba552f3f 100644
  	</div>
  	const baseContent = ((memberEvt && room) || loading || errors) ? <div className="extended-profile">
  		{loading && <ScaleLoader className="user-info-loader" color="var(--primary-color)"/>}
+-- 
+2.56.0
+

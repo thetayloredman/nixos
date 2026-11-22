@@ -39,10 +39,11 @@ gomuks-web.overrideAttrs (old: {
       url = "https://git.squarebowl.club/plate/gomuks/commit/03a8161512d4bbd620f6aa7c91baa63818fe0ff1.patch";
       hash = "sha256-xSbJQib9f6On7MxDZ4FP83IrM436+GpyMtOjCwxeqKI=";
     })
-    ./01-reference-links.patch
-    ./02-the-demorgenning.patch
-    ./03-add-room-alias-to-settings.patch
-    ./04-internal-dashboards.patch
-    ./05-hide-fingerprint.patch
+    ./0001-web-timeline-add-links-to-referenced-events-in-react.patch
+    ./0002-feat-don-t-select-matrix.org-as-the-populated-via.patch
+    ./0003-feat-add-room-alias-to-settings-view.patch
+    ./0004-add-buttons-to-jump-to-internal-dashboards.patch
+    ./0005-composer-always-hide-the-more-obvious-fingerprints.patch
+    ./0006-web-add-reportban-option-to-context-menu.patch
   ];
 })
