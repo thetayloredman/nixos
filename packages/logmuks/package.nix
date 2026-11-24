@@ -1,5 +1,6 @@
 {
   fetchpatch,
+  fetchurl,
   lib,
 
   gomuks-web,
@@ -8,6 +9,12 @@
   fetchNpmDeps,
 }:
 
+let
+  twemoji-ttf = fetchurl {
+    url = "https://github.com/Sav22999/emoji/raw/11bb6a95c2890599333bc63a15a46b5bd05ea7d5/font/twemoji.ttf";
+    hash = "sha256-kaISBpEFPM8RvfX4H9Oej94J7DBE5dFrXd1389GSpUA=";
+  };
+in
 gomuks-web.overrideAttrs (old: {
   src = old.src // gomuks-src;
   vendorHash = "sha256-Qp431FgpBvPVo1DkG13Qy3Hv/vbMtgKn6vS6CD9anXc=";
@@ -46,4 +53,9 @@ gomuks-web.overrideAttrs (old: {
     ./0005-composer-always-hide-the-more-obvious-fingerprints.patch
     ./0006-web-add-reportban-option-to-context-menu.patch
   ];
+
+  postPatch = (old.postPatch or "") + ''
+    mkdir -p web/public/fonts
+    cp ${twemoji-ttf} web/public/fonts/twemoji.ttf
+  '';
 })
