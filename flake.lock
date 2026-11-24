@@ -752,6 +752,7 @@
         "secrets": "secrets",
         "stylix": "stylix",
         "treefmt-nix": "treefmt-nix",
+        "twemoji-src": "twemoji-src",
         "zirco-pkgs": "zirco-pkgs"
       }
     },
@@ -1017,6 +1018,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "twemoji-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783460478,
+        "narHash": "sha256-zCQX7iwDt3mafADtV8Mj1wGl+9ewZnNifIi4jz/BTPw=",
+        "owner": "twitter",
+        "repo": "twemoji",
+        "rev": "bad3bceeafc901ace42a3dfe0421db6388daafb9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "twitter",
+        "repo": "twemoji",
         "type": "github"
       }
     },

@@ -62,6 +62,10 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    twemoji-src = {
+      url = "github:twitter/twemoji";
+      flake = false;
+    };
     zirco-pkgs = {
       url = "github:zirco-lang/zrc";
       inputs.nixpkgs.follows = "nixpkgs";
