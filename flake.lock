@@ -1024,15 +1024,15 @@
     "twemoji-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1783460478,
-        "narHash": "sha256-zCQX7iwDt3mafADtV8Mj1wGl+9ewZnNifIi4jz/BTPw=",
-        "owner": "twitter",
+        "lastModified": 1780352164,
+        "narHash": "sha256-qgdguv5/EhjLlKxIvvQF7+s+AkY7KnFhaKRziOR1hhY=",
+        "owner": "jdecked",
         "repo": "twemoji",
-        "rev": "bad3bceeafc901ace42a3dfe0421db6388daafb9",
+        "rev": "b6b55fef1e8636b540a6d016a4729ca8cdf2e60b",
         "type": "github"
       },
       "original": {
-        "owner": "twitter",
+        "owner": "jdecked",
         "repo": "twemoji",
         "type": "github"
       }

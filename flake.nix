@@ -63,7 +63,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     twemoji-src = {
-      url = "github:twitter/twemoji";
+      url = "github:jdecked/twemoji";
       flake = false;
     };
     zirco-pkgs = {

@@ -6,7 +6,7 @@
     };
 
     twemoji-src = {
-      url = "github:twitter/twemoji";
+      url = "github:jdecked/twemoji";
       flake = false;
     };
   };
