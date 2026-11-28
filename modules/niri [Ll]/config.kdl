@@ -1,6 +1,13 @@
 input {
     focus-follows-mouse max-scroll-amount="10%"
     warp-mouse-to-focus mode="center-xy"
+
+    keyboard {
+        xkb {
+            layout "us"
+            options "compose:menu"
+        }
+    }
 }
 
 output "DP-1" {
